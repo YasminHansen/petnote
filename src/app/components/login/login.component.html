@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="login-container row">
+        <section class="form col-md-6 col-lg-6">
+            <form>
+                <h1 class="indieFont">PetNote</h1>
+                <h2>Login</h2>
+                <input placeholder="E-mail" [(ngModel)]="user.name"  [ngModelOptions]="{standalone: true}"/>
+                <input type="password" placeholder="Senha" [(ngModel)]="user.password"  [ngModelOptions]="{standalone: true}"/>
+                <button class="button" type="submit"  (click)="tryLogin()" routerLink="/profile">Entrar</button>
+            </form>
+            <a class="back-link" routerLink="/cadastro">
+                Criar conta
+            </a>
+        </section>
+        <div class="img-container col-md-6 col-lg-6" >
+            <img src="../../../assets/logo.png" alt="pets"/>
+        </div>
+    </div>
+</div>

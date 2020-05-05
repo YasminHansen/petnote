@@ -1,0 +1,73 @@
+@import '../../../styles.scss';
+
+.login-container{
+    flex-direction: column-reverse;
+    height: auto;
+    
+    section.form{
+        width: auto;
+        padding: 0 30px;
+        margin: 0;
+        margin: auto;
+
+        h1{
+            text-align: center;
+        }
+        a{
+            margin-top: 15px;
+        }
+        form input{
+            margin-bottom: 5px;
+        }
+    }
+    section.form,
+    section.form h2{
+        font-size: 18px;
+    }
+    section.form input,
+    section.form button,
+    section.form a{
+        font-size: 14px;
+    }
+    .img-container{
+        padding: 30px;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media only screen and (min-width: $break-md){
+    .login-container{
+        width: 100%;
+        max-width: 1120px;
+        height: 100vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: unset;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 22px;
+    
+        section.form{
+            width: 100%;
+            max-width: 350px;
+    
+            h1{
+                font-size: 45px;
+                margin-bottom: 32px;
+                text-align: left;
+            }
+            h2{
+                font-size: 22px;
+            }
+            form input{
+                margin-top: 5px;
+            }
+            form input + input{
+                margin-top: 0px;
+            }
+        }
+    }
+}

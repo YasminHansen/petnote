@@ -1,0 +1,107 @@
+@import '../../../styles.scss';
+
+.new-pet-container{
+    height: auto;
+    padding-top: 40px;
+
+    .content{
+        display: block;
+        padding: 30px;
+        background-color: $bg-color;
+        box-shadow: none;
+
+        section{
+            h1{
+                font-size: 26px;
+            }
+            p{
+                font-size: 16px;
+            }
+            a{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+        }
+        form{
+            max-width: 100%;
+
+            input{
+                margin-bottom: 5px;
+                font-size: 16px;
+            }
+           .input-group{
+                display: flex;
+                div {
+                    padding: 0;
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                    p{
+                        margin-left: 10px;
+                       margin-bottom: 5px;
+                    }
+                    select.form-control{
+                        font-size: 16px;
+                        border-radius: 8px;
+                        border-color: $medium-gray;
+                        color: $input-color;
+                    }
+                    &:first-child{
+                        padding-right: 5px;
+                    }
+                    &:last-child{
+                        padding-left: 5px;
+                    }
+                } 
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $break-md){
+    .new-pet-container{
+        width: 100%;
+        max-width: 1120px;
+        height: 100vh;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .content {
+            width: 100%;
+            padding: 96px;
+            background: $bg-color;
+            box-shadow: 0 0 100px rgba(0,0,0,0.1);
+            border-radius: 8px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            section {
+                h1{
+                font-size: 36px;
+                }
+                svg{
+                    margin-left: 10px;
+                }
+                p{
+                    font-size: 16px;
+                    margin: 20px 0;
+                    width: 100%;
+                    max-width: 400px;
+                }
+            }
+            form{
+                width: 100%;
+                max-width: 450px;
+            
+                input{
+                    margin-bottom: 5px; 
+                }   
+            }
+       }
+    }
+}
