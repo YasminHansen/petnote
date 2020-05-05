@@ -23,7 +23,7 @@
         <h1 class="col-12">Pets Cadastrados <i class="fa FaPaw"></i></h1>
 
         <ul class="col-12">
-            <li class="col-sm-12 col-md-6">
+            <li class="col-sm-12 col-md-6" (click)="open(mymodal)">
                 <div class="petPic">
                     <img src="../../../assets/picpetDefault.png" alt="pets" />
                 </div> 
@@ -36,28 +36,52 @@
                         <strong>Idade: </strong>
                         <p>idade</p>
                     </div>
-                    <div>
-                        <strong>Espécie: </strong>
-                        <p>Gato</p>
-                    </div>
-                    <div>
-                        <strong>Gênero: </strong>
-                        <p>genero</p>
-                    </div>
-                    <div>
-                        <strong>Castrado: </strong>
-                        <p>sim</p>
-                    </div>
-                    <button type="button">
-                        <i class="fa FaTrashAlt"></i>
-                    </button>
-
-                    <a href="/profile" class="fullPetProfile">
-                        Perfil completo
-                        <i class="fa FaAngleRight"></i>
-                    </a>
                 </div>
             </li>
         </ul>
     </div>
 </div>
+
+<ng-template #mymodal let-modal >
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title"></h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body profile-modal">
+      
+        <div class="petPic">
+            <img src="../../../assets/picpetDefault.png" alt="pets" />
+        </div> 
+        <div class="petInfo">
+            <div>
+                <strong>Nome: </strong>
+                <p>nome</p>                    
+            </div>
+            <div>
+                <strong>Idade: </strong>
+                <p>idade</p>
+            </div>
+            <div>
+                <strong>Espécie: </strong>
+                <p>Gato</p>
+            </div>
+            <div>
+                <strong>Gênero: </strong>
+                <p>genero</p>
+            </div>
+            <div>
+                <strong>Castrado: </strong>
+                <p>sim</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark">exc
+            <i class="fa FaTrashAlt"></i>
+        </button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+    </div>
+</ng-template>

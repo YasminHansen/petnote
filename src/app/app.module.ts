@@ -10,6 +10,8 @@ import { routes } from './app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { NewpetComponent } from './components/newpet/newpet.component';
 import { RegisterComponent } from './components/register/register.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { RegisterComponent } from './components/register/register.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgbModule,
     [ RouterModule.forRoot(routes, { useHash: false} )] 
   ],
   providers: [

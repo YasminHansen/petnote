@@ -101,6 +101,29 @@
     }
 }
 
+.profile-modal{
+    .petPic{
+        text-align: center;
+        img{
+            margin: auto;
+            width: 200px;
+        }
+    }
+
+    .petInfo{
+        padding: 20px;
+        font-size: 16px;
+        div{
+
+            display: flex;
+            p{
+                margin: 2px 5px;
+            }
+        }
+    }
+}
+
+
 @media only screen and (min-width: $break-md){
     .profile-container {
         header{    
