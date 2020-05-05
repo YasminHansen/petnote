@@ -1,2 +1,2 @@
 # petnote
-Trabalho de Laboratório de Software. Universidade UniRitter
+Trabalho de Laboratório de Software. Universidade UniRitter.
