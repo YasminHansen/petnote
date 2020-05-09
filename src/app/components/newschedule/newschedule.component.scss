@@ -1,7 +1,6 @@
 @import '../../../styles.scss';
 
-
-.profile-container {
+.new-schedule-container {
     header{
         margin-top: 15px;
         display: flex;
@@ -54,101 +53,10 @@
             }
         }
     }
-    h1{
-        font-size: 28px;
-    }
-    ul{
-        display: flex;
-        flex-wrap: inherit;
-        padding: 0;
-
-        li {
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: $lgt-gray;
-            display: flex;
-            align-items: center;
-            margin: 5px;
-            max-width: 560px;
-
-            .petPic img{
-                width: 100px;
-            }
-
-            .petInfo{
-                width: 100%;
-                margin-left: 20px;
-                div {
-                    display: flex;
-                    p{
-                        margin-bottom: 5px;
-                        margin-left: 5px;
-                    }   
-                }
-                button{
-                    position: absolute;
-                    right: 0; 
-                    top: 0;
-                    margin: 15px;
-                }
-                .fullPetProfile{
-                    position: absolute;
-                    right: 0;
-                    margin-right: 15px;
-                }
-            }
-
-            button.back-link{
-                position: relative;
-                margin-top: 0;
-                padding-left: 24px;
-                padding-bottom: 24px;
-                font-size: 16px;
-            }
-        }
-    }
-     h1{
-        margin-top: 60px;   
-    }
 }
-
-.profile-modal{
-    .petPic{
-        text-align: center;
-        img{
-            margin: auto;
-            width: 200px;
-        }
-    }
-
-    .petInfo{
-        padding: 20px;
-        font-size: 16px;
-        div{
-            margin-bottom: 4px;
-            display: flex;
-            p{
-                margin: 0 5px;
-            }
-        }
-    }
-    .btn{
-        border-color: $medium-gray;
-    }
-    .fas{
-        color: $detail-color;
-    }
-    .trash-icon{
-        position: absolute;
-        margin-left: 25px;
-        left: 0;
-    }
-}
-
 
 @media only screen and (min-width: $break-md){
-    .profile-container {
+    .new-schedule-container {
         header{    
             .profile-logo{
                 span{

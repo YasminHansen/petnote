@@ -6,15 +6,15 @@
                 <img src="../../../assets/logo2.png" alt="pets" />
                 <span>Bem vindo, !</span>
                 <button type="button button-login-sm">
-                    <i class="fa FaPowerOff"></i>
+                    <i class="fas fa-power-off"></i>
                 </button>
             </div>
 
             <div class="option-group col-sm-12 col-md-6 col-lg-4">
                 <a class="button col-6 col-md-6" routerLink="/cadastrar-pet">Cadastrar Pet</a>
-                <a class="button col-6 col-md-6">Agenda</a>
+                <a class="button col-6 col-md-6" routerLink="/agenda">Agenda</a>
                 <button type="button" class="button-login-lg">
-                    <i class="fa FaPowerOff"></i>
+                    <i class="fas fa-power-off"></i>
                 </button>
             </div>
             
@@ -22,19 +22,19 @@
     
         <h1 class="col-12">Pets Cadastrados <i class="fa FaPaw"></i></h1>
 
-        <ul class="col-12">
-            <li class="col-sm-12 col-md-6" (click)="open(mymodal)">
+        <ul class="col-12" >
+            <li class="col-sm-12 col-md-6 col-lg-6" (click)="open(mymodal, i)" *ngFor="let pet of pets; let i as index;">
                 <div class="petPic">
                     <img src="../../../assets/picpetDefault.png" alt="pets" />
                 </div> 
                 <div class="petInfo">
                     <div>
                         <strong>Nome: </strong>
-                        <p>nome</p>                    
+                        <p>{{ pet.name }}</p>                    
                     </div>
                     <div>
                         <strong>Idade: </strong>
-                        <p>idade</p>
+                        <p>{{ pet.age }}</p>
                     </div>
                 </div>
             </li>
@@ -57,11 +57,11 @@
         <div class="petInfo">
             <div>
                 <strong>Nome: </strong>
-                <p>nome</p>                    
+                <p>{{ pet.name }}</p>                    
             </div>
             <div>
                 <strong>Idade: </strong>
-                <p>idade</p>
+                <p>{{ pet.age }}</p>
             </div>
             <div>
                 <strong>Espécie: </strong>
@@ -69,18 +69,21 @@
             </div>
             <div>
                 <strong>Gênero: </strong>
-                <p>genero</p>
+                <p>{{ pet.gender }}</p>
             </div>
             <div>
                 <strong>Castrado: </strong>
-                <p>sim</p>
+                <p>{{ pet.castrated }}</p>
             </div>
         </div>
 
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark">exc
-            <i class="fa FaTrashAlt"></i>
+    <div class="modal-footer profile-modal">
+        <button type="button" class="btn btn-outline-dark trash-icon">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+        <button type="button" class="btn btn-outline-dark">
+            <i class="fas fa-edit"></i>
         </button>
         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
     </div>

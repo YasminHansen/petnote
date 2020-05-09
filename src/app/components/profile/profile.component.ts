@@ -1,32 +1,52 @@
 import { Component, OnInit } from '@angular/core';
+import { Pet } from 'src/app/Models/pet';
 import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
+import { PetService } from 'src/app/Services/pet.service';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent {
+
+export class ProfileComponent implements OnInit {
+  pets = {} as Pet;
+  pet;
   title = 'ng-bootstrap-modal-demo';
   closeResult: string;
   modalOptions:NgbModalOptions;
  
   constructor(
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private petService: PetService
   ){
     this.modalOptions = {
       backdrop:'static',
       backdropClass:'customBackdrop'
     }
   }
+
+  ngOnInit(): void {
+    this.petService.getPets(sessionStorage.getItem('userId')).subscribe(
+      r => {
+        this.pets = r;
+      },
+      r => {
+        alert(r.error.error);
+      }
+    );    
+  }
   
-  open(content) {
+  open(content, pet) {
+    this.pet = pet;
     this.modalService.open(content, this.modalOptions).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
+
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
- 
+
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

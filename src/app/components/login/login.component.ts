@@ -12,17 +12,18 @@ import { LoginService } from 'src/app/Services/login.service';
 export class LoginComponent implements OnInit {
   user = {} as User;
 
-  constructor(private login: LoginService, private userService: UserService, private router: Router) { }
+  constructor(private loginService: LoginService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     
   }
 
   tryLogin() {
-    this.login.login(this.user.name, this.user.password)
+    this.loginService.login(this.user.name, this.user.password)
       .subscribe(
         r => {
           if (1 == 1) {
+            sessionStorage.setItem('userId', r.id.toString());
             this.router.navigateByUrl[('/profile')];
           }
         },
