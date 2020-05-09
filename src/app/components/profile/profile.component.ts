@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal, ModalDismissReasons, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { Pet } from 'src/app/Models/pet';
-import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 import { PetService } from 'src/app/Services/pet.service';
 
 @Component({
@@ -12,13 +12,14 @@ import { PetService } from 'src/app/Services/pet.service';
 export class ProfileComponent implements OnInit {
   pets = {} as Pet;
   pet;
+  userName;
   title = 'ng-bootstrap-modal-demo';
   closeResult: string;
   modalOptions:NgbModalOptions;
- 
+
   constructor(
     private modalService: NgbModal,
-    private petService: PetService
+    private petService: PetService,
   ){
     this.modalOptions = {
       backdrop:'static',
@@ -27,6 +28,10 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+ 
+  }
+  
+  ngAfterViewInit(): void {
     this.petService.getPets(sessionStorage.getItem('userId')).subscribe(
       r => {
         this.pets = r;
@@ -34,9 +39,10 @@ export class ProfileComponent implements OnInit {
       r => {
         alert(r.error.error);
       }
-    );    
+    );   
+    this.userName = sessionStorage.getItem('userName');
   }
-  
+
   open(content, pet) {
     this.pet = pet;
     this.modalService.open(content, this.modalOptions).result.then((result) => {
