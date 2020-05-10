@@ -5,7 +5,7 @@
             <div class="profile-logo col-sm-12 col-md-6 col-lg-6">
                 <img src="../../../assets/logo2.png" alt="pets" />
                 <span>Bem vindo, !</span>
-                <button type="button button-login-sm">
+                <button type="button" class="button-login-sm" (click)="logout()">
                     <i class="fas fa-power-off"></i>
                 </button>
             </div>
@@ -13,7 +13,7 @@
             <div class="option-group col-sm-12 col-md-6 col-lg-6">
                 <a routerLink="/profile"><i class="fas fa-chevron-left"></i> Voltar</a>
                 <a class="button" routerLink="/cadastrar-compromisso">Cadastrar compromisso</a>
-                <button type="button" class="button-login-lg">
+                <button type="button" class="button-login-lg" (click)="logout()">
                     <i class="fas fa-power-off"></i>
                 </button>
             </div>

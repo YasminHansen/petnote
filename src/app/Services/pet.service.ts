@@ -19,4 +19,11 @@ export class PetService {
       }
     });
   }
+  deletePet(petId: number, userId: string): Observable<Pet>{
+    return this.http.delete<Pet>('http://localhost:3333/pets/' + petId , {
+      headers: {
+        Authorization: userId,
+      }
+    });
+  }
 }

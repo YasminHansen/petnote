@@ -5,7 +5,7 @@
             <div class="profile-logo col-sm-12 col-md-6 col-lg-8">
                 <img src="../../../assets/logo2.png" alt="pets" />
                 <span>Bem vindo, {{ userName }}!</span>
-                <button type="button button-login-sm">
+                <button type="button" clas="button-login-sm" (click)="logout()">
                     <i class="fas fa-power-off"></i>
                 </button>
             </div>
@@ -13,14 +13,14 @@
             <div class="option-group col-sm-12 col-md-6 col-lg-4">
                 <a class="button col-6 col-md-6" routerLink="/cadastrar-pet">Cadastrar Pet</a>
                 <a class="button col-6 col-md-6" routerLink="/agenda">Agenda</a>
-                <button type="button" class="button-login-lg">
+                <button type="button" class="button-login-lg" (click)="logout()">
                     <i class="fas fa-power-off"></i>
                 </button>
             </div>
             
         </header>
     
-        <h1 class="col-12">Pets Cadastrados <i class="fa FaPaw"></i></h1>
+        <h1 class="col-12">Pets Cadastrados <i class="fas fa-paw"></i></h1>
 
         <ul class="col-12" >
             <li class="col-sm-12 col-md-6 col-lg-6" (click)="open(mymodal, i)" *ngFor="let pet of pets; let i as index;">
@@ -79,7 +79,7 @@
 
     </div>
     <div class="modal-footer profile-modal">
-        <button type="button" class="btn btn-outline-dark trash-icon">
+        <button type="button" class="btn btn-outline-dark trash-icon" (click)="delete(); modal.close('Save click')">
             <i class="fas fa-trash-alt"></i>
         </button>
         <button type="button" class="btn btn-outline-dark">
