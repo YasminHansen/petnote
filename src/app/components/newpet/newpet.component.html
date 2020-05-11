@@ -4,45 +4,51 @@
             <section class="col-lg-6">
                 <h1>
                     Cadastrar novo pet 
+                    <i class="fas fa-paw"></i>
                 </h1>
                 <p>Preencha com as informações do seu pet.</p>
                 <a class="back-link" routerLink="/profile">
+                    <i class="fas fa-arrow-left"></i>
                     Voltar para home
                 </a>
             </section> 
 
             <form class="col-lg-6">
                 <input 
-                    placeholder="Nome" />
+                    placeholder="Nome"
+                    [(ngModel)]="pet.name" [ngModelOptions]="{standalone: true}" />
                 
                 <input type="number" 
-                    placeholder="Idade" />
+                    placeholder="Idade" 
+                    [(ngModel)]="pet.age" [ngModelOptions]="{standalone: true}"/>
                 
                 <input type="number" 
-                    placeholder="Peso" />
+                    placeholder="Peso"
+                    [(ngModel)]="pet.weight" [ngModelOptions]="{standalone: true}"/>
                 
                 <div class="input-group">
                     <div class="col-6">
                         <p>Gênero: </p>
-                        <select name="Gênero" class="form-control">
-                            <option selected>Selecionar</option>
-                            <option value="Femea">Fêmea</option>
-                            <option value="Macho">Macho</option>
+                        <select name="Gênero" class="form-control" [(ngModel)]="selectedGender" [ngModelOptions]="{standalone: true}"> 
+                            <option>Selecione</option>
+                            <option>Fêmea</option>
+                            <option>Macho</option>
                         </select>
                     </div>
                     <div class="col-6">
                         <p>Cadastrado: </p>
-                        <select name="Castrado" class="form-control">
-                            <option selected>Selecionar</option>
-                            <option value="Sim">Sim</option>
-                            <option value="Não">Não</option>
+                        <select name="Castrado" class="form-control" [(ngModel)]="selectedCastrated" [ngModelOptions]="{standalone: true}">
+                            <option>Selecione</option>
+                            <option>Sim</option>
+                            <option>Não</option>
                         </select>
                     </div>
                 </div>
                 
                 <input 
-                    placeholder="Doenças" />
-                <button class="button" type="submit">
+                    placeholder="Doenças" 
+                    [(ngModel)]="pet.disease" [ngModelOptions]="{standalone: true}"/>
+                <button class="button" type="submit"  (click)="petRegister(pet)">
                     Cadastrar
                 </button>
 

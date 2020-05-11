@@ -3,8 +3,8 @@ export class Pet{
     userId: string
 	name: string
 	age: number
-	weight: number 
-	gender: boolean
-	castrated: boolean
+	weight: string 
+	gender: number
+	castrated: number
     disease: string
 }

@@ -19,11 +19,18 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  tryRegister(){
+  register(user: User){
+    this.user.name = user.name;
+    this.user.email = user.email;
+    this.user.password = user.password;
+    this.user.city = user.city;
+    this.user.uf = user.uf;
+
     this.registerService.register(this.user.name, this.user.email, this.user.password, this.user.city, this.user.uf)
     .subscribe(
       r => {
-
+        alert(`Bem-vindo, ${r.name}!`);
+        this.router.navigate(['/']);
       },
       r => {
         alert(r.error.error);

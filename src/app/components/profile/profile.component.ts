@@ -17,7 +17,6 @@ export class ProfileComponent implements OnInit {
   title = 'ng-bootstrap-modal-demo';
   closeResult: string;
   modalOptions:NgbModalOptions;
-
   reloadPag = true;
 
 
@@ -32,22 +31,20 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.petService.getPets(sessionStorage.getItem('userId')).subscribe(
-      r => {
-        this.pets = r;
-      },
-      r => {
-        alert(r.error.error);
-      }
-    );   
-    this.userName = sessionStorage.getItem('userName');
+  ngOnInit(): void { 
+    setTimeout(() => {
+      this.petService.getPets().subscribe(
+        r => {
+          this.pets = r;
+        },
+        r => {
+          alert(r.error.error);
+        }
+      );   
+      this.userName = sessionStorage.getItem('userName');
+    }, 100);
   }
   
-  ngAfterViewInit(): void {
-
-  }
-
   reload() {
     if (this.reload) {
       this.router.navigateByUrl('/profile', { skipLocationChange: true }).then(() => {
@@ -63,7 +60,7 @@ export class ProfileComponent implements OnInit {
   }
 
   delete(){
-    this.petService.deletePet(this.pet.id, sessionStorage.getItem('userId')).subscribe(
+    this.petService.deletePet(this.pet.id).subscribe(
       r =>{
 
       },
