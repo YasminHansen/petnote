@@ -28,7 +28,7 @@ export class PetService {
   }
 
   
-  createPet(name: string, age: number, weight: string, gender: number, castrated: number, disease: string): Observable<Pet>{
+  createPet(name: string, age: number, weight: string, gender: number, castrated: number, disease: string, photo_link: string): Observable<Pet>{
     
     return this.http.post<Pet>('http://localhost:3333/pets',{
 
@@ -38,6 +38,7 @@ export class PetService {
         gender: gender,
         castrated: castrated,
         disease: disease,
+        photo_link: photo_link,
     },{
       headers: {
         Authorization: sessionStorage.getItem('userId')

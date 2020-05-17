@@ -6,5 +6,6 @@ export class Pet{
 	weight: string 
 	gender: number
 	castrated: number
-    disease: string
+	disease: string
+	photo_link: string
 }

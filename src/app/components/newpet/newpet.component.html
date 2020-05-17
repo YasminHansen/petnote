@@ -2,6 +2,15 @@
     <div class="new-pet-container row">
         <div class="content">
             <section class="col-lg-6">
+                <div class="pet-photo">
+                    <img src="{{ pet.photo_link }}"/>
+                </div>
+                <div class="button-photo">
+                    <button color="warn" (click)="onClick()">  
+                        <i class="fas fa-camera"></i>
+                    </button>  
+                </div>
+                <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
                 <h1>
                     Cadastrar novo pet 
                     <i class="fas fa-paw"></i>
@@ -51,9 +60,7 @@
                 <button class="button" type="submit"  (click)="petRegister(pet)">
                     Cadastrar
                 </button>
-
             </form>  
-
         </div> 
     </div>
 </div>

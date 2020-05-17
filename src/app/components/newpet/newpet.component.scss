@@ -6,11 +6,42 @@
 
     .content{
         display: block;
-        padding: 30px;
+        padding: 10px;
         background-color: $bg-color;
         box-shadow: none;
 
         section{
+            .pet-photo{
+                background:url("../../../assets/picpetDefault.png");
+                background-size: cover;
+                margin: 0px auto 20px auto;
+                width: 250px;
+                height: 250px;
+                border: 2px solid $detail-color;
+                border-radius: 50%;
+                overflow: hidden;
+                img{
+                    width: inherit;
+                }
+            }
+            .button-photo{
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+                height: 40px;
+                button{
+                    border: none;
+                    i{
+                        color: $detail-color;
+                        font-size: 30px;
+                    }
+                    &:hover{
+                        i{
+                            font-size: 35px;
+                        }
+                    }
+                }
+            }
             h1{
                 font-size: 26px;
                 i{
@@ -32,6 +63,7 @@
             }
         }
         form{
+            
             max-width: 100%;
 
             input{

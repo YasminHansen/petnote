@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   pets = {} as Pet;
   pet;
+  gender;
+  castrated;
   userName;
   title = 'ng-bootstrap-modal-demo';
   closeResult: string;
@@ -36,6 +38,21 @@ export class ProfileComponent implements OnInit {
       this.petService.getPets().subscribe(
         r => {
           this.pets = r;
+          
+          for(let pet in this.pets){
+            if(this.pet.gender == 1)
+             this.gender = "Fêmea";
+            else{
+              this.gender = "Fêmea";
+            }
+
+            if(this.pet.castrated == 0)
+              this.pet.castrated = "Não";
+            else{
+              this.pet.castrated = "Sim";
+            }
+          }
+          
         },
         r => {
           alert(r.error.error);
