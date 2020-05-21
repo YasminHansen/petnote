@@ -12,15 +12,15 @@
                 </a>
             </section> 
             <form>  
-                <input placeholder="Nome" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}"/>
+                <input placeholder="Nome" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" required/>
 
-                <input type="email" placeholder="E-mail" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"/>
+                <input type="email" placeholder="E-mail" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" required/>
 
-                <input type="password" placeholder="Senha" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"/>
+                <input type="password" placeholder="Senha" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" required/>
 
                 <div class="input-group">
-                    <input placeholder="Cidade" class="col-sm-12 col-md-9 col-lg-10" [(ngModel)]="user.city" [ngModelOptions]="{standalone: true}"/>
-                    <input placeholder="UF" class="col-sm-12 col-md-3 col-lg-2" [(ngModel)]="user.uf" [ngModelOptions]="{standalone: true}"/>
+                    <input placeholder="Cidade" class="col-sm-12 col-md-9 col-lg-10" [(ngModel)]="user.city" [ngModelOptions]="{standalone: true}" required/>
+                    <input placeholder="UF" class="col-sm-12 col-md-3 col-lg-2" [(ngModel)]="user.uf" [ngModelOptions]="{standalone: true}" required/>
                 </div>
 
                 <button class="button" type="submit" (click)="register(user)">

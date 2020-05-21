@@ -2,7 +2,7 @@
 
 .schedule-container {
     header{
-        margin-top: 15px;
+        margin: 15px 0;
         display: flex;
         flex-wrap: wrap;
 
@@ -41,6 +41,20 @@
                 height: auto;
                 align-items: center;
                 text-align: center;
+                &.new-commit-lg{
+                    display: none;
+                }
+                &.new-commit-sm{
+                    display: block;
+                }
+                i.fa-chevron-left{
+                    margin-right: 10px;
+                    margin-left: -10px;
+                }
+                &:hover i.fa-chevron-left{
+                    margin-right: 20px;
+                    margin-left: -20px;
+                }
             }
             a:first-child{
                 margin-left: 0;
@@ -53,25 +67,102 @@
             }
         }
     }
+    .schedule-info{
+        padding: 0;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            li{
+                display: block;
+                padding: 15px;
+                border-radius: 10px;
+                margin: 5px;
+                background-color: $lgt-gray;
+                align-items: center;
+                
+                .schedule-field{
+                    display: block;
+                    margin-bottom: 5px;
+                    line-height: 24px;
+                    strong{
+                        margin-right: 5px;
+                    }
+                    p{
+                        margin: 0 5px;
+                    }
+                    i{
+                        width: 15px;
+                        text-align: center;
+                        margin-right: 5px;
+                    }
+                }
+                &:hover{
+                    box-shadow: 0 0 25px rgba(0,0,0,0.1);
+                }
+            }
+        }
+    }
+    .schedule-calendar {
+        text-align: center;
+        margin-bottom: 10px;
+        &::ng-deep ngb-datepicker-navigation{
+            .btn-link{ 
+                color: $detail-color !important;
+                &:hover{
+                    color: $font-df-color !important;
+                }
+            }
+        }
+        &::ng-deep ngb-datepicker-month .ngb-dp-week {
+            .ngb-dp-weekday{
+                color: $detail-color;
+            }
+            .ngb-dp-today{
+                background-color: $medium-gray !important;
+                border-radius: 50px;
+                .bg-primary{
+                    background-color: $detail-color !important;
+                    border-radius: 50px;
+                }
+            }
+            .ngb-dp-day{
+                .bg-primary{
+                    background-color: $detail-color !important;
+                    border-radius: 50px;
+                }
+                .btn-light:hover{
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: $break-md){
+    body{
+        background-color: red !important;
+    }
+
     .schedule-container {
+        height: 100vh;
+        overflow: hidden;
         header{    
             .profile-logo{
                 span{
-                   font-size: 16px;
-                   margin-left: 15px;
+                font-size: 16px;
+                margin-left: 15px;
                 }
                 button{
                     display: none;
                 }
-             }
+            }
             .option-group{
-                justify-content: end;
+                padding: 0;
+                justify-content: flex-end;               
                 a.button{
                     height: min-content;
-                    max-width: max-content;
+                    max-width: 130px;
                 }
                 button.button-login-lg{
                     border: 1px solid $medium-gray;
@@ -84,6 +175,63 @@
                         color: $detail-color;
                         width: 40px;
                     }
+                }
+            }
+        }
+        .schedule-info{
+            overflow: auto;
+            height: 100%;
+            padding-bottom: 120px;
+            ul{ 
+                overflow: auto;
+                padding: 0 15px 0 0;
+                li{
+                    .schedule-field{
+                        display: flex;
+                        margin-bottom: 5px;
+                        p{
+                            margin: 0 5px;
+                        }
+                        i{
+                            width: 15px;
+                            text-align: center;
+                            margin-right: 5px;
+                        }
+                    }
+                    &:hover{
+                        box-shadow: 0 0 25px rgba(0,0,0,0.1);
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: $break-lg){
+    .schedule-container {
+        height: auto;
+        overflow: unset;
+        header{    
+            .option-group{
+                a{
+                    &.button{
+                        max-width: 175px;
+                        width: max-content;
+                    }
+                    &.new-commit-lg{
+                        display: block;
+                    }
+                    &.new-commit-sm{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .schedule-info{
+            overflow: none;
+            ul{
+                li{
+                    display: block;
+                    max-width: 400px;
                 }
             }
         }

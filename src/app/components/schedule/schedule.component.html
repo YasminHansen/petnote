@@ -4,20 +4,53 @@
         <header class="col-12">
             <div class="profile-logo col-sm-12 col-md-6 col-lg-6">
                 <img src="../../../assets/logo2.png" alt="pets" />
-                <span>Bem vindo, !</span>
+                <span>Bem vindo, {{ userName }}!</span>
                 <button type="button" class="button-login-sm" (click)="logout()">
                     <i class="fas fa-power-off"></i>
                 </button>
             </div>
 
             <div class="option-group col-sm-12 col-md-6 col-lg-6">
-                <a routerLink="/profile"><i class="fas fa-chevron-left"></i> Voltar</a>
-                <a class="button" routerLink="/cadastrar-compromisso">Cadastrar compromisso</a>
+                <a class="button col-6 col-md-6" routerLink="/profile"><i class="fas fa-chevron-left"></i> Voltar</a>
+                <a class="button col-6 col-md-6" routerLink="/cadastrar-compromisso">Novo</a>
+                <!-- <a class="button col-6 col-md-6 new-commit-lg" routerLink="/cadastrar-compromisso">Cadastrar compromisso</a> -->
                 <button type="button" class="button-login-lg" (click)="logout()">
                     <i class="fas fa-power-off"></i>
                 </button>
             </div>
             
         </header>
+        <div class="schedule-calendar col-md-5 col-lg-3">
+            <ngb-datepicker  #dp [(ngModel)]="date" (navigate)="dateNavigate($event)" ></ngb-datepicker>
+            <!-- <button (click)="setDate(date)">Filtrar por data</button> -->
+
+            <!-- <input type="text"  [(ngModel)]="date"/> -->
+            <!-- <button  ngbDatepicker (click)="setDate(date)">Selecionar Data</button> -->
+        </div>
+        <div class="schedule-info col-md-7 col-lg-9">
+            <ul  class="col-12">
+                <li  class="col-sm-12 col-md-12 col-lg-6" *ngFor="let schedule of scheduleAux; let i as index;" (click)="setDay(schedule.day)">
+                    <div>
+                        <div class="schedule-field">
+                            <strong><i class="far fa-calendar-alt"></i>Data: </strong>
+                            {{ schedule.day }}/{{ schedule.month }}/{{ schedule.year }}
+                        </div>
+                        <div class="schedule-field">
+                            <strong><i class="fas fa-map-marker-alt"></i>Local: </strong>
+                            {{ schedule.place }}
+                        </div>
+                        <div class="schedule-field">
+                            <strong><i class="far fa-clock"></i>Horário: </strong>
+                            <p></p>
+                        </div>
+                        <div class="schedule-field">
+                            <strong><i class="far fa-clipboard"></i>Descrição: </strong>
+                            {{ schedule.description }}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </div>

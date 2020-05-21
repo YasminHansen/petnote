@@ -1,22 +1,37 @@
 <div class="container">
-    <div class="new-schedule-container row">
-            
-        <header class="col-12">
-            <div class="profile-logo col-sm-12 col-md-6 col-lg-8">
-                <img src="../../../assets/logo2.png" alt="pets" />
-                <span>Bem vindo, !</span>
-                <button type="button button-login-sm">
-                    <i class="fas fa-power-off"></i>
-                </button>
-            </div>
+    <div class="new-schedule-container  row">
+        <div class="content">
+            <section class="col-lg-6">
+                <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
+                <h1>
+                    Novo compromisso 
+                    <i class="fas fa-paw"></i>
+                </h1>
+                <div class="schedule-calendar">
+                    <ngb-datepicker [(ngModel)]="date"></ngb-datepicker>
+                    <!-- <input type="text"  [(ngModel)]="date"/> -->
+                    <!-- <button  ngbDatepicker (click)="setDate(date)">Selecionar Data</button> -->
+                </div>
+                <a class="back-link" routerLink="/profile">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar para home
+                </a>
+            </section> 
 
-            <div class="option-group col-sm-12 col-md-6 col-lg-4">
-                <a class="button col-6 col-md-6" routerLink="/agenda">Voltar</a>
-                <button type="button" class="button-login-lg">
-                    <i class="fas fa-power-off"></i>
+            <form class="col-lg-6">
+                <input 
+                    placeholder="Descrição"
+                    [(ngModel)]="schedule.description" [ngModelOptions]="{standalone: true}"
+                    />
+                
+                <input placeholder="Local"
+                       [(ngModel)]="schedule.place" [ngModelOptions]="{standalone: true}"
+                    />
+                <button class="button" type="submit" (click)="commitmentRegister(schedule)">
+                    Cadastrar
                 </button>
-            </div>
-            
-        </header>
+            </form>  
+        </div> 
     </div>
 </div>
+

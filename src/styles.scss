@@ -12,6 +12,7 @@ $detail-color: #b757e2;
 $black: #41414d;
 $white: #fff;
 $input-color: #9aa0ab;
+$error-color: #fbf0f0;
 
 $break-sm: 576px;
 $break-md: 768px;
@@ -68,10 +69,11 @@ form input {
     text-decoration: none;
     font-size: 18px;
     transition: filter 0.2s;
-}
-
-.button:hover {
-    filter: brightness(90%);
+    
+    &:hover {
+        filter: brightness(90%);
+        text-decoration: none;
+    }
 }
 
 .back-link{
@@ -83,9 +85,12 @@ form input {
    font-weight: 500;
    text-decoration: none;
    transition: border-color 0.2s;
-}
-.back-link svg{
-    margin-right: 8px;
+    svg{
+        margin-right: 8px;
+    }
+    &:hover{
+        text-decoration: none;
+    }
 }
 
 .back-linkr{

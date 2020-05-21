@@ -1,89 +1,179 @@
 @import '../../../styles.scss';
 
-.new-schedule-container {
-    header{
-        margin-top: 15px;
-        display: flex;
-        flex-wrap: wrap;
+.new-schedule-container{
+    height: auto;
+    padding-top: 40px;
 
-        .profile-logo{
-            align-items: center;
-            padding: 0;
-            margin-bottom: 10px;
-            img{
-                height: 80px;
+    .content{
+        display: block;
+        padding: 10px;
+        background-color: $bg-color;
+        box-shadow: none;
+
+        section{
+            .pet-photo{
+                background:url("../../../assets/picpetDefault.png");
+                background-size: cover;
+                margin: 0px auto 20px auto;
+                width: 250px;
+                height: 250px;
+                border: 2px solid $detail-color;
+                border-radius: 50%;
+                overflow: hidden;
+                img{
+                    width: inherit;
+                }
             }
-            span{
-                margin: 0;
+            .button-photo{
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+                height: 40px;
+                button{
+                    border: none;
+                    i{
+                        color: $detail-color;
+                        font-size: 30px;
+                    }
+                    &:hover{
+                        i{
+                            font-size: 35px;
+                        }
+                    }
+                }
             }
-            button{
-                border: 1px solid $medium-gray;
-                border-radius: 50px;
-                position: absolute;
-                right: 5px;
-                top: 10px;
-                width: 35px;
-                height: 35px;
+            h1{
+                font-size: 26px;
                 i{
+                    margin-left: 5px;
                     color: $detail-color;
                 }
             }
-         }
-        .option-group{
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            padding-left: 5px;
+            p{
+                font-size: 16px;
+            }
             a{
-                margin: 15px 5px;
-                font-size: 14px;
-                padding: 10px 15px;
-                height: auto;
-                align-items: center;
-                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                font-size: 16px;
+                i{
+                    margin-right: 5px;
+                    color: $detail-color;
+                }
             }
-            a:first-child{
-                margin-left: 0;
+        }
+        form{
+            
+            max-width: 100%;
+
+            input{
+                margin-bottom: 5px;
+                font-size: 16px;
             }
-            .button{
-                color: $white;
+           .input-group{
+                display: flex;
+                div {
+                    padding: 0;
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                    p{
+                        margin-left: 10px;
+                       margin-bottom: 5px;
+                    }
+                    select.form-control{
+                        font-size: 16px;
+                        border-radius: 8px;
+                        border-color: $medium-gray;
+                        color: $input-color;
+                    }
+                    &:first-child{
+                        padding-right: 5px;
+                    }
+                    &:last-child{
+                        padding-left: 5px;
+                    }
+                } 
             }
-            button.button-login-lg{
-                display: none;
+        }
+    }
+    .schedule-calendar {
+        &::ng-deep ngb-datepicker-navigation{
+            .btn-link{ 
+                color: $detail-color !important;
+                &:hover{
+                    color: $font-df-color !important;
+                }
+            }
+        }
+        &::ng-deep ngb-datepicker-month .ngb-dp-week {
+            .ngb-dp-weekday{
+                color: $detail-color;
+            }
+            .ngb-dp-today{
+                background-color: $medium-gray !important;
+                border-radius: 50px;
+                .bg-primary{
+                    background-color: $detail-color !important;
+                    border-radius: 50px;
+                }
+            }
+            .ngb-dp-day{
+                .bg-primary{
+                    background-color: $detail-color !important;
+                    border-radius: 50px;
+                }
+                .btn-light:hover{
+                    border-radius: 50px;
+                }
             }
         }
     }
 }
 
 @media only screen and (min-width: $break-md){
-    .new-schedule-container {
-        header{    
-            .profile-logo{
-                span{
-                   font-size: 16px;
-                   margin-left: 15px;
+    .new-schedule-container{
+        width: 100%;
+        max-width: 1120px;
+        height: 100vh;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .content {
+            width: 100%;
+            padding: 96px;
+            background: $bg-color;
+            box-shadow: 0 0 100px rgba(0,0,0,0.1);
+            border-radius: 8px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            section {
+                h1{
+                font-size: 36px;
                 }
-                button{
-                    display: none;
+                svg{
+                    margin-left: 10px;
                 }
-             }
-            .option-group{
-                a.button{
-                    height: min-content;
-                }
-                button.button-login-lg{
-                    border: 1px solid $medium-gray;
-                    border-radius: 50px;
-                    display: block;
-                    height: 38px;
-                    width: 40px;
-                    margin: 15px;
-                    i{
-                        color: $detail-color;
-                        width: 40px;
-                    }
+                p{
+                    font-size: 16px;
+                    margin: 20px 0;
+                    width: 100%;
+                    max-width: 400px;
                 }
             }
-        }
+            form{
+                width: 100%;
+                max-width: 450px;
+            
+                input{
+                    margin-bottom: 5px; 
+                }   
+            }
+       }
     }
 }

@@ -54,7 +54,6 @@ export class NewpetComponent implements OnInit {
           alert(r.error.error);
         }
       )
-
   }
 
   uploadFile(file) {  
