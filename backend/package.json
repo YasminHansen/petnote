@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "postinstall": "ng build --aot --prod"
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,9 +19,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  },
-  "engines": {
-    "node": "13.11.0",
-    "npm": "6.13.7"
   }
 }
