@@ -60,7 +60,7 @@ export class ScheduleComponent implements OnInit, NgbDatepickerNavigateEvent {
     this.currentYear = $event.next.year;
 
     this.scheduleAux = this.schedules.filter((schedule) => {
-      return schedule.month == this.currentMonth; 
+      return schedule.month == this.currentMonth && schedule.year == this.currentYear; 
     })
     
   }

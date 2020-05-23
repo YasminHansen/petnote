@@ -57,23 +57,19 @@
         <div class="petInfo">
             <div>
                 <strong>Nome: </strong>
-                <p>{{ pet.name }}</p>                    
+                <input placeholder="{{ pet.name }}" [(ngModel)]="pet.name" disabled [attr.disabled]="IsTextBoxDisabled?'true':null">                   
             </div>
             <div>
                 <strong>Idade: </strong>
-                <p>{{ pet.age }}</p>
-            </div>
-            <div>
-                <strong>Espécie: </strong>
-                <p>Gato</p>
+                <input placeholder=" {{ pet.age }}" [(ngModel)]="pet.age" disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
             </div>
             <div>
                 <strong>Gênero: </strong>
-                <p>{{ gender }}</p>
+                <input placeholder="{{ pet.gender }}" [(ngModel)]="pet.gender" disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
             </div>
             <div>
                 <strong>Castrado: </strong>
-                <p>{{ pet.castrated }}</p>
+                <input placeholder="{{ pet.castrated }}" [(ngModel)]="pet.castrated" disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
             </div>
         </div>
 
@@ -82,9 +78,10 @@
         <button type="button" class="btn btn-outline-dark trash-icon" (click)="delete(); modal.close('Save click')">
             <i class="fas fa-trash-alt"></i>
         </button>
-        <button type="button" class="btn btn-outline-dark">
-            <i class="fas fa-edit"></i>
+        <button type="button" class="btn btn-outline-dark" (click)=' enableInput()'>
+            <i class="fas fa-edit" ></i>
         </button>
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+        <button *ngIf="enableSave == false" type="button" class="close btn btn-outline-dark" aria-label="Close" (click)="modal.dismiss('Cross click')">Fechar</button>
+        <button *ngIf="enableSave == true" type="button" class="btn btn-outline-dark" (click)="edit(); modal.dismiss('Cross click')">Salvar</button>
     </div>
 </ng-template>

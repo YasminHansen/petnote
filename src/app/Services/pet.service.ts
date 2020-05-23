@@ -26,7 +26,22 @@ export class PetService {
       }
     });
   }
-
+  editPet(petId: number, name: string, age: number, gender: number, weight: string, castrated: number, disease: string, photo_link: string): Observable<Pet>{
+    return this.http.post<Pet>('http://localhost:3333/pets/edit', {
+        id: petId,
+        name: name,
+        age: age,
+        weight: weight,
+        gender: gender,
+        castrated: castrated,
+        disease: disease,
+        photo_link: photo_link,
+    },{
+      headers: {
+        Authorization: sessionStorage.getItem('userId')
+      },
+    });
+  }
   
   createPet(name: string, age: number, weight: string, gender: number, castrated: number, disease: string, photo_link: string): Observable<Pet>{
     

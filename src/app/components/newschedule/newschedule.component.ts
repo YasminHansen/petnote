@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Schedule } from 'src/app/Models/schedule';
 import { ScheduleService } from 'src/app/Services/schedule.service';
+
 @Component({
   selector: 'app-newschedule',
   templateUrl: './newschedule.component.html',
@@ -10,7 +11,9 @@ import { ScheduleService } from 'src/app/Services/schedule.service';
 })
 export class NewscheduleComponent implements OnInit {
   list: NgbDateStruct[] = [];
-  date: NgbDateStruct = { year: 1789, month: 7, day: 14 };
+  d = new Date();
+  date: NgbDateStruct = { year: this.d.getFullYear(), month: this.d.getMonth() + 1, day: this.d.getDate() };
+  time = { hour: 13, minute: 30};
   schedule = {} as Schedule;
 
   constructor(
@@ -30,9 +33,12 @@ export class NewscheduleComponent implements OnInit {
     schedule.day = this.date.day;
     schedule.month = this.date.month;
     schedule.year = this.date.year;
+    schedule.hour = this.time.hour;
+    schedule.minute = this.time.minute;
         
     this.scheduleService.createCommitment(
       schedule.day, schedule.month, schedule.year,
+      schedule.hour, schedule.minute,
       schedule.description, schedule.place).subscribe(
         r => {
           (`Compromisso cadastrado com sucesso`);

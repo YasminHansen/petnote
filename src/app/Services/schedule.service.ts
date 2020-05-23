@@ -20,11 +20,13 @@ export class ScheduleService {
      });
    }
 
-   createCommitment(day: number, month: number, year: number, description: string, place: string): Observable<Schedule>{
+   createCommitment(day: number, month: number, year: number, hour: number, minute: number, description: string, place: string): Observable<Schedule>{
      return this.http.post<Schedule>('http://localhost:3333/schedule', {
         day: day,
         month: month,
         year: year,
+        hour: hour,
+        minute: minute,
         description: description,
         place: place,
      }, {

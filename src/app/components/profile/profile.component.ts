@@ -16,6 +16,8 @@ export class ProfileComponent implements OnInit {
   gender;
   castrated;
   userName;
+  enableSave = false;
+  IsTextBoxDisabled = true;
   title = 'ng-bootstrap-modal-demo';
   closeResult: string;
   modalOptions:NgbModalOptions;
@@ -74,6 +76,25 @@ export class ProfileComponent implements OnInit {
   logout(){
     sessionStorage.clear();
     this.router.navigate(['/']);
+
+  }
+  enableInput(){
+    this.IsTextBoxDisabled = false;
+    this.enableSave = true;
+  }
+
+  edit(){      
+    this.petService.editPet(this.pet.id, this.pet.name, this.pet.age, 
+                            this.pet.gender, this.pet.weight, this.pet.castrated, 
+                            this.pet.disease, this.pet.photo_link).subscribe(
+      r => {
+        // this.reload(); 
+      },
+      r =>{
+        alert(r.error.error);
+      }
+    );
+
   }
 
   delete(){
@@ -100,6 +121,8 @@ export class ProfileComponent implements OnInit {
 
 
   private getDismissReason(reason: any): string {
+    this.IsTextBoxDisabled = true;
+    this.enableSave = false;
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {

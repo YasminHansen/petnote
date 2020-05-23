@@ -24,6 +24,8 @@
                     [(ngModel)]="schedule.description" [ngModelOptions]="{standalone: true}"
                     />
                 
+                    <ngb-timepicker [(ngModel)]="time" [ngModelOptions]="{standalone: true}"></ngb-timepicker>
+
                 <input placeholder="Local"
                        [(ngModel)]="schedule.place" [ngModelOptions]="{standalone: true}"
                     />
