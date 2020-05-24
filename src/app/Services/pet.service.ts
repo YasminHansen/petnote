@@ -13,21 +13,21 @@ export class PetService {
   }
 
   getPets(): Observable<Pet>{
-    return this.http.get<Pet>('http://localhost:3333/profile', {
+    return this.http.get<Pet>('https://petnote-backend.herokuapp.com/profile', {
       headers: {
         Authorization: sessionStorage.getItem('userId'),
       }
     });
   }
   deletePet(petId: number): Observable<Pet>{
-    return this.http.delete<Pet>('http://localhost:3333/pets/' + petId , {
+    return this.http.delete<Pet>('https://petnote-backend.herokuapp.com/pets/' + petId , {
       headers: {
         Authorization: sessionStorage.getItem('userId'),
       }
     });
   }
   editPet(petId: number, name: string, age: number, gender: number, weight: string, castrated: number, disease: string, photo_link: string): Observable<Pet>{
-    return this.http.post<Pet>('http://localhost:3333/pets/edit', {
+    return this.http.post<Pet>('https://petnote-backend.herokuapp.com/pets/edit', {
         id: petId,
         name: name,
         age: age,
@@ -45,7 +45,7 @@ export class PetService {
   
   createPet(name: string, age: number, weight: string, gender: number, castrated: number, disease: string, photo_link: string): Observable<Pet>{
     
-    return this.http.post<Pet>('http://localhost:3333/pets',{
+    return this.http.post<Pet>('https://petnote-backend.herokuapp.com/pets',{
 
         name: name,
         age: age,

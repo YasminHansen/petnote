@@ -13,7 +13,7 @@ export class ScheduleService {
    }
 
    getCommitment(): Observable<Schedule>{
-     return this.http.get<Schedule>('http://localhost:3333/schedule', {
+     return this.http.get<Schedule>('https://petnote-backend.herokuapp.com/schedule', {
         headers: {
           Authorization: sessionStorage.getItem('userId'),
         }
@@ -21,7 +21,7 @@ export class ScheduleService {
    }
 
    createCommitment(day: number, month: number, year: number, hour: number, minute: number, description: string, place: string): Observable<Schedule>{
-     return this.http.post<Schedule>('http://localhost:3333/schedule', {
+     return this.http.post<Schedule>('https://petnote-backend.herokuapp.com/schedule', {
         day: day,
         month: month,
         year: year,
