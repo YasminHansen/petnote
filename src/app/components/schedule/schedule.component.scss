@@ -201,32 +201,39 @@
                 overflow: auto;
                 padding: 0 15px 0 0;
                 li{ 
-                    div {
-                        margin-bottom: 20px;
-                        .schedule-field{
-                            display: flex;
-                            margin-bottom: 5px;
-                            p{
-                                margin: 0 5px;
-                            }
-                            i{
-                                width: 15px;
-                                text-align: center;
-                                margin-right: 5px;
-                            }
+                    .schedule-field{
+                        display: flex;
+                        margin-bottom: 5px;
+                        p{
+                            margin: 0 5px;
+                        }
+                        i{
+                            width: 15px;
+                            text-align: center;
+                            margin-right: 5px;
+                        }
+                    }
+                    .schedule-options{
+                        display: none;
+                        button{
+                            border: none;
+                            background-color: unset;
+                            margin: 0 10px;
+                           &:first-child{
+                               margin-left: 0;
+                           }
                         }
                     }
                     &:hover{
                         box-shadow: 0 0 25px rgba(0,0,0,0.1);
-                    }
-                    .schedule-options{
-                        position: absolute;
-                        right: 0;
-                        display: flex;
-                        flex-flow: column-reverse;
-                        top: 0;
-                        height: 85%;
-                        margin-right: 15px;
+                        .schedule-options{
+                            display: flex;
+                            justify-content: start;
+                            margin-right: 15px;
+                            right: 0;
+                            position: absolute;
+                            top: 0;
+                        }
                     }
                 }
             }
