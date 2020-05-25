@@ -65,7 +65,7 @@
     ul{
         display: flex;
         flex-wrap: inherit;
-        padding: 0;
+        padding: 0 15px;
 
         li {
             cursor: pointer;
@@ -74,7 +74,6 @@
             background-color: $lgt-gray;
             display: flex;
             align-items: center;
-            margin: 5px;
             max-width: 560px;
 
             &:hover{
@@ -87,7 +86,7 @@
 
             .petInfo{
                 width: 100%;
-                margin-left: 20px;
+                margin-left: 15px;
                 div {
                     display: flex;
                     p{

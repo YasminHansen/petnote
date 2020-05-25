@@ -20,8 +20,11 @@
                 border: 2px solid $detail-color;
                 border-radius: 50%;
                 overflow: hidden;
+                display: flex;
+                justify-content: center;
                 img{
-                    width: inherit;
+                    height: 100%;
+                    width: auto;
                 }
             }
             .button-photo{

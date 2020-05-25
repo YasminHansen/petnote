@@ -13,7 +13,6 @@
             <div class="option-group col-sm-12 col-md-6 col-lg-6">
                 <a class="button col-6 col-md-6" routerLink="/profile"><i class="fas fa-chevron-left"></i> Voltar</a>
                 <a class="button col-6 col-md-6" routerLink="/cadastrar-compromisso">Novo</a>
-                <!-- <a class="button col-6 col-md-6 new-commit-lg" routerLink="/cadastrar-compromisso">Cadastrar compromisso</a> -->
                 <button type="button" class="button-login-lg" (click)="logout()">
                     <i class="fas fa-power-off"></i>
                 </button>
@@ -22,10 +21,6 @@
         </header>
         <div class="schedule-calendar col-md-5 col-lg-3">
             <ngb-datepicker  #dp [(ngModel)]="date" (navigate)="dateNavigate($event)" ></ngb-datepicker>
-            <!-- <button (click)="setDate(date)">Filtrar por data</button> -->
-
-            <!-- <input type="text"  [(ngModel)]="date"/> -->
-            <!-- <button  ngbDatepicker (click)="setDate(date)">Selecionar Data</button> -->
         </div>
         <div class="schedule-info col-md-7 col-lg-9">
             <ul  class="col-12">
@@ -48,6 +43,14 @@
                             <strong><i class="far fa-clipboard"></i>Descrição: </strong>
                             {{ schedule.description }}
                         </div>
+                    </div>
+                    <div class="schedule-options">
+                        <button type="button" class="trash-schedule">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <button type="button" class="edit-schedule">
+                            <i class="fas fa-edit" ></i>
+                        </button>
                     </div>
                 </li>
             </ul>

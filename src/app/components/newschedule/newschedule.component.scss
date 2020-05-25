@@ -11,6 +11,9 @@
         box-shadow: none;
 
         section{
+            .back-link{
+                margin-top: 0;
+            }
             .pet-photo{
                 background:url("../../../assets/picpetDefault.png");
                 background-size: cover;
@@ -62,7 +65,7 @@
                 }
             }
         }
-        form{
+        .schedule-info{
             
             max-width: 100%;
 
@@ -94,9 +97,25 @@
                     }
                 } 
             }
+            .schedule-hour{
+                text-align: center;
+                display: flex;
+                &::ng-deep ngb-timepicker {
+                    margin: auto;
+                    fieldset .ngb-tp{
+                        .btn-link{
+                            color: $detail-color !important;
+                        }
+                    }
+
+                }
+            }
         }
     }
     .schedule-calendar {
+        text-align: center;
+
+        margin: 20px 0;
         &::ng-deep ngb-datepicker-navigation{
             .btn-link{ 
                 color: $detail-color !important;
@@ -143,7 +162,7 @@
 
         .content {
             width: 100%;
-            padding: 96px;
+            padding: 10px;
             background: $bg-color;
             box-shadow: 0 0 100px rgba(0,0,0,0.1);
             border-radius: 8px;
@@ -153,8 +172,11 @@
             align-items: center;
 
             section {
+                .back-link{
+                    margin-top: 20px;
+                }
                 h1{
-                font-size: 36px;
+                    font-size: 30px;
                 }
                 svg{
                     margin-left: 10px;
@@ -166,7 +188,7 @@
                     max-width: 400px;
                 }
             }
-            form{
+            .schedule-info{
                 width: 100%;
                 max-width: 450px;
             
@@ -175,5 +197,24 @@
                 }   
             }
        }
+    }
+}
+
+@media only screen and (min-width: $break-lg){
+    .new-schedule-container{
+        .content {
+            padding: 96px;
+        }
+    }
+}
+@media only screen and (min-width: $break-xl){
+    .new-schedule-container{
+        .content {
+            section {
+                h1{
+                    font-size: 36px;
+                }
+            }
+        }
     }
 }

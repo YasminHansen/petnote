@@ -2,6 +2,10 @@
     <div class="new-schedule-container  row">
         <div class="content">
             <section class="col-lg-6">
+                <a class="back-link" routerLink="/profile">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar para home
+                </a>
                 <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
                 <h1>
                     Novo compromisso 
@@ -12,23 +16,19 @@
                     <!-- <input type="text"  [(ngModel)]="date"/> -->
                     <!-- <button  ngbDatepicker (click)="setDate(date)">Selecionar Data</button> -->
                 </div>
-                <a class="back-link" routerLink="/profile">
-                    <i class="fas fa-arrow-left"></i>
-                    Voltar para home
-                </a>
             </section> 
 
-            <form class="col-lg-6">
+            <form class="col-lg-6 schedule-info">
                 <input 
                     placeholder="Descrição"
                     [(ngModel)]="schedule.description" [ngModelOptions]="{standalone: true}"
                     />
-                
-                    <ngb-timepicker [(ngModel)]="time" [ngModelOptions]="{standalone: true}"></ngb-timepicker>
-
-                <input placeholder="Local"
-                       [(ngModel)]="schedule.place" [ngModelOptions]="{standalone: true}"
+                    <input placeholder="Local"
+                    [(ngModel)]="schedule.place" [ngModelOptions]="{standalone: true}"
                     />
+                    <div class="schedule-hour">
+                        <ngb-timepicker [(ngModel)]="time" [ngModelOptions]="{standalone: true}"></ngb-timepicker>
+                    </div>
                 <button class="button" type="submit" (click)="commitmentRegister(schedule)">
                     Cadastrar
                 </button>
