@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
           if (1 == 1) {
             sessionStorage.setItem('userId', r.id.toString());
             sessionStorage.setItem('userName', r.name);
-             window.location.href = "http://localhost:4200/profile";
+             window.location.href = "https://petnote-backend.herokuapp.com/profile";
           }
         },
         r => {
