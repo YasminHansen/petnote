@@ -13,7 +13,7 @@ export class LoginService {
   }
 
   login(email: string, password: string): Observable<User>{
-    return this.http.post<User>('http://localhost:3333/session', {
+    return this.http.post<User>('https://petnote-backend.herokuapp.com/session', {
       email: email,
       password: password
     });

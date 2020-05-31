@@ -45,7 +45,7 @@ export class PetService {
   
   createPet(name: string, age: number, weight: string, gender: string, castrated: string, disease: string, photo_link: string): Observable<Pet>{
     
-    return this.http.post<Pet>('http://localhost:3333/pets',{
+    return this.http.post<Pet>('https://petnote-backend.herokuapp.com/pets',{
 
         name: name,
         age: age,

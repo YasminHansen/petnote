@@ -13,7 +13,7 @@ export class ScheduleService {
    }
 
    getCommitment(): Observable<Schedule>{
-     return this.http.get<Schedule>('http://localhost:3333/schedule', {
+     return this.http.get<Schedule>('https://petnote-backend.herokuapp.com/schedule', {
         headers: {
           Authorization: sessionStorage.getItem('userId'),
         }
@@ -22,7 +22,7 @@ export class ScheduleService {
 
    createCommitment(day: number, month: number, year: number, hour: number, minute: number, 
     description: string, place: string): Observable<Schedule>{
-     return this.http.post<Schedule>('http://localhost:3333/schedule', {
+     return this.http.post<Schedule>('https://petnote-backend.herokuapp.com/schedule', {
         day: day,
         month: month,
         year: year,
@@ -37,7 +37,7 @@ export class ScheduleService {
       });
    }
    deleteCommitment(scheduleId): Observable<Schedule>{
-     return this.http.delete<Schedule>('http://localhost:3333/schedule/' + scheduleId, {
+     return this.http.delete<Schedule>('https://petnote-backend.herokuapp.com/schedule/' + scheduleId, {
        headers:{
          Authorization: sessionStorage.getItem('userId'),
        }
@@ -45,7 +45,7 @@ export class ScheduleService {
    }
    editCommitmnet(commitmentId: number, day: number, month: number, year: number, hour: number, 
     minute: number, description: number, place: number): Observable<Schedule>{
-      return this.http.post<Schedule>('http://localhost:3333/schedule/edit', {
+      return this.http.post<Schedule>('https://petnote-backend.herokuapp.com/schedule/edit', {
         id: commitmentId,
         day: day,
         year: year,
