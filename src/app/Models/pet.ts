@@ -4,8 +4,8 @@ export class Pet{
 	name: string
 	age: number
 	weight: string 
-	gender: number
-	castrated: number
+	gender: string
+	castrated: string
 	disease: string
 	photo_link: string
 }

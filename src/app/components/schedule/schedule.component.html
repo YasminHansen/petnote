@@ -45,10 +45,10 @@
                         </div>
                     </div>
                     <div class="schedule-options">
-                        <button type="button" class="edit-schedule">
+                        <button type="button" class="edit-schedule" (click)="open(mymodal, i)">
                             <i class="fas fa-edit" ></i>
                         </button>
-                        <button type="button" class="trash-schedule">
+                        <button type="button" class="trash-schedule" (click)="delete(schedule);">
                             <i class="fas fa-trash-alt"></i>
                         </button>
                     </div>
@@ -58,3 +58,43 @@
 
     </div>
 </div>
+
+
+<ng-template #mymodal let-modal >
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title"></h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body profile-modal">
+        <div class="petInfo container">
+            <div class="row">
+                <strong class="col-md-2">Descrição: </strong>
+                <textarea rows="3" cols=""  
+                        class="col-md-10"
+                        placeholder="Descrição"
+                        [(ngModel)]="schedule.description" [ngModelOptions]="{standalone: true}">
+                    </textarea>
+            </div>
+            <div class="row">
+                <strong class="col-md-2">Local: </strong>
+                <input type="textarea"
+                        class="col-md-10"
+                        placeholder="Local"
+                        [(ngModel)]="schedule.place" [ngModelOptions]="{standalone: true}"/>
+                        
+            </div>
+            <div class="schedule-hour row">
+                <strong class="col-md-2">Horário: </strong>
+                <ngb-timepicker class="col-md-10" [(ngModel)]="time" [ngModelOptions]="{standalone: true}"></ngb-timepicker>
+            </div>
+            <button class="button" type="submit" (click)="edit(); modal.dismiss('Cross Click')">
+                Salvar
+            </button>
+        </div>
+
+    </div>
+    <div class="modal-footer profile-modal">
+    </div>
+</ng-template>

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
           if (1 == 1) {
             sessionStorage.setItem('userId', r.id.toString());
             sessionStorage.setItem('userName', r.name);
-            this.router.navigateByUrl[('/profile')];
+             window.location.href = "http://localhost:4200/profile";
           }
         },
         r => {

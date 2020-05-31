@@ -13,7 +13,7 @@ export class RegisterService {
   }
 
   register(name: string, email: string, password: string, city: string, uf: string): Observable<User>{
-    return this.http.post<User>('https://petnote-backend.herokuapp.com/user', {
+    return this.http.post<User>('http://localhost:3333/user', {
       name: name,
       email: email,
       password: password,

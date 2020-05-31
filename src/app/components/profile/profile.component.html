@@ -49,27 +49,45 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="modal-body profile-modal">
+    <div class="modal-body profile-modal container">
       
         <div class="petPic">
             <img src="../../../assets/picpetDefault.png" alt="pets" />
         </div> 
         <div class="petInfo">
-            <div>
-                <strong>Nome: </strong>
-                <input placeholder="{{ pet.name }}" [(ngModel)]="pet.name" disabled [attr.disabled]="IsTextBoxDisabled?'true':null">                   
+            <div class="row">
+                <strong class="col-sm-12 col-md-2">Nome: </strong>
+                <input class="col-sm-12 col-md-10"
+                    placeholder="{{ pet.name }}" [(ngModel)]="pet.name" 
+                    disabled [attr.disabled]="IsTextBoxDisabled?'true':null">                   
             </div>
-            <div>
-                <strong>Idade: </strong>
-                <input placeholder=" {{ pet.age }}" [(ngModel)]="pet.age" disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
+            <div class="row">
+                <strong class="col-sm-12 col-md-2">Idade: </strong>
+                <input class="col-sm-12 col-md-10"
+                    placeholder=" {{ pet.age }}" [(ngModel)]="pet.age" 
+                    disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
             </div>
-            <div>
-                <strong>Gênero: </strong>
-                <input placeholder="{{ pet.gender }}" [(ngModel)]="pet.gender" disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
+            <div class="row">
+                <strong class="col-sm-12 col-md-2">Gênero: </strong>
+                <select  [(ngModel)]="pet.gender"  name="Gênero" class="form-control"
+                disabled [attr.disabled]="IsTextBoxDisabled?'true':null"> 
+                    <option>Fêmea</option>
+                    <option>Macho</option>
+                </select>
+                <!-- <input class="col-sm-12 col-md-10"
+                    placeholder="{{ pet.gender }}" [(ngModel)]="pet.gender" 
+                    disabled [attr.disabled]="IsTextBoxDisabled?'true':null"> -->
             </div>
-            <div>
-                <strong>Castrado: </strong>
-                <input placeholder="{{ pet.castrated }}" [(ngModel)]="pet.castrated" disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
+            <div class="row">
+                <strong class="col-sm-12 col-md-2">Castrado: </strong>
+                <select name="Castrado" class="form-control" [(ngModel)]="pet.castrated"
+                disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
+                    <option>Sim</option>
+                    <option>Não</option>
+                </select>
+                <!-- <input class="col-sm-12 col-md-10"
+                    placeholder="{{ pet.castrated }}" [(ngModel)]="pet.castrated" 
+                    disabled [attr.disabled]="IsTextBoxDisabled?'true':null"> -->
             </div>
         </div>
 

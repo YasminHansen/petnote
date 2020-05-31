@@ -154,6 +154,39 @@
     }
 }
 
+
+.profile-modal{
+    .petInfo .row{
+        padding: 0 20px;
+        strong{
+            padding: 0 !important;
+            margin-bottom: 10px;
+        }
+        textarea, input{
+            border: 1px solid $input-color;
+            border-radius: 5px;
+            color: $input-color;
+            margin-bottom: 10px;
+        }
+        &.schedule-hour{
+            display: flex;
+            strong{
+                margin: auto;
+            }
+            &::ng-deep ngb-timepicker {
+                margin: auto;
+                fieldset .ngb-tp{
+                    width: max-content;
+                    margin: auto;
+                    .btn-link{
+                        color: $detail-color !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: $break-md){
     body{
         background-color: red !important;
@@ -234,6 +267,18 @@
                             position: absolute;
                             top: 0;
                         }
+                    }
+                }
+            }
+        }
+    }
+    .profile-modal{
+        .petInfo .row{
+            &.schedule-hour{
+                &::ng-deep ngb-timepicker {
+                    padding: 0;
+                    fieldset {
+                        width: max-content;
                     }
                 }
             }

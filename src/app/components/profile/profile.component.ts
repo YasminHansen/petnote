@@ -36,33 +36,21 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void { 
+
+
     setTimeout(() => {
+      this.userName = sessionStorage.getItem('userName');
       this.petService.getPets().subscribe(
         r => {
-          this.pets = r;
-          
-          for(let pet in this.pets){
-            if(this.pet.gender == 1)
-             this.gender = "Fêmea";
-            else{
-              this.gender = "Fêmea";
-            }
-
-            if(this.pet.castrated == 0)
-              this.pet.castrated = "Não";
-            else{
-              this.pet.castrated = "Sim";
-            }
-          }
-          
+          this.pets = r;          
         },
         r => {
           alert(r.error.error);
         }
       );   
-      this.userName = sessionStorage.getItem('userName');
-    }, 100);
+    }, 0);
   }
+
   
   reload() {
     if (this.reload) {

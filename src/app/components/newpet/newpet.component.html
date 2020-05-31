@@ -39,15 +39,15 @@
                     <div class="col-6">
                         <p>Gênero: </p>
                         <select name="Gênero" class="form-control" [(ngModel)]="selectedGender" [ngModelOptions]="{standalone: true}"> 
-                            <option  selected>Selecionedasdas</option>
+                            <option [value]="selectedGender" [selected]="true">Selecionar</option>
                             <option>Fêmea</option>
                             <option>Macho</option>
                         </select>
                     </div>
                     <div class="col-6">
-                        <p>Cadastrado: </p>
-                        <select name="Castrado" class="form-control" [(ngModel)]="selectedCastrated" [ngModelOptions]="{standalone: true}">
-                            <option>Selecione</option>
+                        <p>Castrado: </p>
+                        <select name="Castrado"  id="castrado" class="form-control" [(ngModel)]="selectedCastrated" [ngModelOptions]="{standalone: true}">
+                            <option [value]="selectedCastrated" [selected]="true">Selecionar</option>
                             <option>Sim</option>
                             <option>Não</option>
                         </select>

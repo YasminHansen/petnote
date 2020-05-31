@@ -77,6 +77,9 @@ form input {
     }
 }
 
+.credits{
+    display: none;
+}
 .back-link{
     display: flex;
    align-items: center;
@@ -97,3 +100,5 @@ form input {
 .back-linkr{
     opacity: 0.8;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

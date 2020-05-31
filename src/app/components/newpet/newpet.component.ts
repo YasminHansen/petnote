@@ -29,18 +29,18 @@ export class NewpetComponent implements OnInit {
   petRegister(pet: Pet){
 
     if(this.selectedGender == "Fêmea"){
-      pet.gender = 0;
+      pet.gender = "Fêmea";
     }
     else{
-      pet.gender = 1;
+      pet.gender = "Macho";
     }
 
 
     if(this.selectedCastrated == "Não"){
-      pet.castrated = 0;
+      pet.castrated = "Não";
     }
     else{
-      pet.castrated = 1;
+      pet.castrated = "Sim";
     }
 
     this.petService.createPet(
