@@ -10,11 +10,11 @@ import { NewscheduleComponent } from './components/newschedule/newschedule.compo
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '/login', component: LoginComponent },
-  { path: '/profile', component: ProfileComponent },
-  { path: '/cadastrar-pet', component: NewpetComponent },
-  { path: '/cadastro', component: RegisterComponent},
-  { path: '/agenda', component: ScheduleComponent},
-  { path: '/cadastrar-compromisso', component: NewscheduleComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'cadastrar-pet', component: NewpetComponent },
+  { path: 'cadastro', component: RegisterComponent},
+  { path: 'agenda', component: ScheduleComponent},
+  { path: 'cadastrar-compromisso', component: NewscheduleComponent},
 ];
 
