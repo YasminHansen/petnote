@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
           if (1 == 1) {
             sessionStorage.setItem('userId', r.id.toString());
             sessionStorage.setItem('userName', r.name);
-            this.router.navigate[('/profile')];
-            // this.router.navigateByUrl[('/profile')];
+            // this.router.navigate[('/profile')];
+            this.router.navigateByUrl('/profile');
           }
         },
         r => {
