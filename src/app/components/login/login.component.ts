@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
           if (1 == 1) {
             sessionStorage.setItem('userId', r.id.toString());
             sessionStorage.setItem('userName', r.name);
-            this.router.navigateByUrl[('/profile')];
+            this.router.navigate[('https://petnote-frontend.herokuapp.com/profile')];
+            // this.router.navigateByUrl[('/profile')];
           }
         },
         r => {
