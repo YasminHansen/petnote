@@ -26,7 +26,7 @@ export class PetService {
       }
     });
   }
-  editPet(petId: number, name: string, age: number, gender: string, weight: string, castrated: string, disease: string, photo_link: string): Observable<Pet>{
+  editPet(petId: number, name: string, age: number, gender: string, weight: string, castrated: string, disease: string, specie: string, photo_link: string): Observable<Pet>{
     return this.http.post<Pet>('http://localhost:3333/pets/edit', {
         id: petId,
         name: name,
@@ -34,6 +34,7 @@ export class PetService {
         weight: weight,
         gender: gender,
         castrated: castrated,
+        specie: specie,
         disease: disease,
         photo_link: photo_link,
     },{
@@ -43,7 +44,7 @@ export class PetService {
     });
   }
   
-  createPet(name: string, age: number, weight: string, gender: string, castrated: string, disease: string, photo_link: string): Observable<Pet>{
+  createPet(name: string, age: number, weight: string, gender: string, castrated: string, disease: string, specie: string, photo_link: string): Observable<Pet>{
     
     return this.http.post<Pet>('http://localhost:3333/pets',{
 
@@ -53,6 +54,7 @@ export class PetService {
         gender: gender,
         castrated: castrated,
         disease: disease,
+        specie: specie,
         photo_link: photo_link,
     },{
       headers: {

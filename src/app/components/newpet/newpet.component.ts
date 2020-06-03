@@ -45,7 +45,8 @@ export class NewpetComponent implements OnInit {
 
     this.petService.createPet(
       pet.name, pet.age, pet.weight, 
-      pet.gender, pet.castrated, pet.disease, pet.photo_link).subscribe(
+      pet.gender, pet.castrated, pet.disease,
+      pet.specie, pet.photo_link).subscribe(
         r => {
           alert(`Pet cadastrado com sucesso!`);
           this.router.navigate(['/profile']);

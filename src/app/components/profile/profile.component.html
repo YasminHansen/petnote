@@ -74,9 +74,6 @@
                     <option>Fêmea</option>
                     <option>Macho</option>
                 </select>
-                <!-- <input class="col-sm-12 col-md-10"
-                    placeholder="{{ pet.gender }}" [(ngModel)]="pet.gender" 
-                    disabled [attr.disabled]="IsTextBoxDisabled?'true':null"> -->
             </div>
             <div class="row">
                 <strong class="col-sm-12 col-md-2">Castrado: </strong>
@@ -85,9 +82,18 @@
                     <option>Sim</option>
                     <option>Não</option>
                 </select>
-                <!-- <input class="col-sm-12 col-md-10"
-                    placeholder="{{ pet.castrated }}" [(ngModel)]="pet.castrated" 
-                    disabled [attr.disabled]="IsTextBoxDisabled?'true':null"> -->
+            </div>
+            <div class="row">
+                <strong class="col-sm-12 col-md-2">Espécie: </strong>
+                <input class="col-sm-12 col-md-10"
+                    placeholder="{{ pet.specie }}" [(ngModel)]="pet.specie" 
+                    disabled [attr.disabled]="IsTextBoxDisabled?'true':null">                   
+            </div>
+            <div class="row">
+                <strong class="col-sm-12 col-md-2">Doenças: </strong>
+                <input class="col-sm-12 col-md-10"
+                    placeholder="{{ pet.disease }}" [(ngModel)]="pet.disease" 
+                    disabled [attr.disabled]="IsTextBoxDisabled?'true':null">                   
             </div>
         </div>
 

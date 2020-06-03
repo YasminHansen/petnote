@@ -55,6 +55,9 @@
                 </div>
                 
                 <input 
+                    placeholder="Espécie" 
+                    [(ngModel)]="pet.specie" [ngModelOptions]="{standalone: true}"/>
+                <input 
                     placeholder="Doenças" 
                     [(ngModel)]="pet.disease" [ngModelOptions]="{standalone: true}"/>
                 <button class="button" type="submit"  (click)="petRegister(pet)">
