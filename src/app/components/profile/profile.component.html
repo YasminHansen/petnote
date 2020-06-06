@@ -105,7 +105,7 @@
         <button type="button" class="btn btn-outline-dark" (click)=' enableInput()'>
             <i class="fas fa-edit" ></i>
         </button>
-        <button *ngIf="enableSave == false" type="button" class="close btn btn-outline-dark" aria-label="Close" (click)="modal.dismiss('Cross click')">Fechar</button>
-        <button *ngIf="enableSave == true" type="button" class="btn btn-outline-dark" (click)="edit(); modal.dismiss('Cross click')">Salvar</button>
+        <!-- <button *ngIf="enableSave == false" type="button" class="close btn btn-outline-dark" aria-label="Close" (click)="modal.dismiss('Cross click')">Fechar</button> -->
+        <button *ngIf="enableSave == true" type="button" class="btn-save btn btn-outline-dark" (click)="edit(); modal.dismiss('Cross click')">Salvar</button>
     </div>
 </ng-template>
