@@ -28,20 +28,19 @@
                     <div>
                         <div class="schedule-field">
                             <strong><i class="far fa-calendar-alt"></i>Data: </strong>
-                            {{ schedule.day }}/{{ schedule.month }}/{{ schedule.year }}
+                            <p>{{ schedule.day }}/{{ schedule.month }}/{{ schedule.year }}</p>
                         </div>
                         <div class="schedule-field">
                             <strong><i class="fas fa-map-marker-alt"></i>Local: </strong>
-                            {{ schedule.place }}
+                            <p>{{ schedule.place }}</p>
                         </div>
                         <div class="schedule-field">
                             <strong><i class="far fa-clock"></i>Horário: </strong>
-                            {{ schedule.hour}}:{{ schedule.minute }}
-                            <p></p>
+                            <p>{{ schedule.hour}}:{{ schedule.minute }}</p>
                         </div>
                         <div class="schedule-field">
                             <strong><i class="far fa-clipboard"></i>Descrição: </strong>
-                            {{ schedule.description }}
+                            <p>{{ schedule.description }}</p>
                         </div>
                     </div>
                     <div class="schedule-options">

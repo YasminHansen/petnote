@@ -67,7 +67,7 @@
                     placeholder=" {{ pet.age }}" [(ngModel)]="pet.age" 
                     disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
             </div>
-            <div class="row">
+            <div class="row  select-group">
                 <strong class="col-sm-12 col-md-2">Gênero: </strong>
                 <select  [(ngModel)]="pet.gender"  name="Gênero" class="form-control"
                 disabled [attr.disabled]="IsTextBoxDisabled?'true':null"> 
@@ -75,7 +75,7 @@
                     <option>Macho</option>
                 </select>
             </div>
-            <div class="row">
+            <div class="row select-group">
                 <strong class="col-sm-12 col-md-2">Castrado: </strong>
                 <select name="Castrado" class="form-control" [(ngModel)]="pet.castrated"
                 disabled [attr.disabled]="IsTextBoxDisabled?'true':null">
