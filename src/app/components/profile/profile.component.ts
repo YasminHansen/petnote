@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
 
 
     setTimeout(() => {
-      this.userName = sessionStorage.getItem('userName');
+      this.userName = localStorage.getItem('userName');
       this.petService.getPets().subscribe(
         r => {
           this.pets = r;          
@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
   }
 
   logout(){
-    sessionStorage.clear();
+    localStorage.clear();
     this.router.navigate(['/']);
 
   }

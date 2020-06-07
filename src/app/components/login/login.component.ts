@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
       .subscribe(
         r => {
           if (1 == 1) {
-            sessionStorage.setItem('userId', r.id.toString());
-            sessionStorage.setItem('userName', r.name);
+            localStorage.setItem('userId', r.id.toString());
+            localStorage.setItem('userName', r.name);
              window.location.href = "http://localhost:4200/profile";
           }
         },

@@ -17,8 +17,10 @@ export class NewpetComponent implements OnInit {
   selectControl:FormControl = new FormControl();
   pet = {} as Pet;
 
-  selectedGender;
-  selectedCastrated;
+  selectedGender = "Selecionar";
+  selectedCastrated = "Selecionar";
+  validateGender;
+  validateCastrated;
   
   @ViewChild("fileUpload", {static: false}) fileUpload: ElementRef;files  = [];  
   constructor(private petService: PetService, private router: Router, private uploadService: UploadService) { }
@@ -28,19 +30,18 @@ export class NewpetComponent implements OnInit {
 
   petRegister(pet: Pet){
 
-    if(this.selectedGender == "Fêmea"){
-      pet.gender = "Fêmea";
+    if(this.selectedCastrated == "Selecionar"){
+      this.validateCastrated = true;
+      return;
+    }else{
+      this.validateCastrated = false;
     }
-    else{
-      pet.gender = "Macho";
-    }
-
-
-    if(this.selectedCastrated == "Não"){
-      pet.castrated = "Não";
-    }
-    else{
-      pet.castrated = "Sim";
+    
+    if(this.selectedGender == "Selecionar"){
+      this.validateGender = true;
+      return;
+    } else{
+      this.validateGender = false;
     }
 
     this.petService.createPet(

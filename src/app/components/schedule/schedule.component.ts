@@ -51,7 +51,7 @@ export class ScheduleComponent implements OnInit, NgbDatepickerNavigateEvent {
         r => {
           alert(r.error.error);
         });
-        this.userName = sessionStorage.getItem('userName');
+        this.userName = localStorage.getItem('userName');
   }
 
   reload() {
@@ -64,7 +64,7 @@ export class ScheduleComponent implements OnInit, NgbDatepickerNavigateEvent {
   }
 
   logout(){
-    sessionStorage.clear();
+    localStorage.clear();
     this.router.navigate(['/']);
   }
 

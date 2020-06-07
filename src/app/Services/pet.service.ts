@@ -15,14 +15,14 @@ export class PetService {
   getPets(): Observable<Pet>{
     return this.http.get<Pet>('http://localhost:3333/profile', {
       headers: {
-        Authorization: sessionStorage.getItem('userId'),
+        Authorization: localStorage.getItem('userId'),
       }
     });
   }
   deletePet(petId: number): Observable<Pet>{
     return this.http.delete<Pet>('http://localhost:3333/pets/' + petId , {
       headers: {
-        Authorization: sessionStorage.getItem('userId'),
+        Authorization: localStorage.getItem('userId'),
       }
     });
   }
@@ -39,7 +39,7 @@ export class PetService {
         photo_link: photo_link,
     },{
       headers: {
-        Authorization: sessionStorage.getItem('userId')
+        Authorization: localStorage.getItem('userId')
       },
     });
   }
@@ -58,7 +58,7 @@ export class PetService {
         photo_link: photo_link,
     },{
       headers: {
-        Authorization: sessionStorage.getItem('userId')
+        Authorization: localStorage.getItem('userId')
       },
     });
   }

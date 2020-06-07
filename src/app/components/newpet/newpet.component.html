@@ -35,11 +35,12 @@
                     placeholder="Peso"
                     [(ngModel)]="pet.weight" [ngModelOptions]="{standalone: true}"/>
                 
+                <span *ngIf="validateGender == true || validateCastrated == true" >Preencha os campos abaixo.</span>
                 <div class="input-group">
                     <div class="col-6">
                         <p>Gênero: </p>
                         <select name="Gênero" class="form-control" [(ngModel)]="selectedGender" [ngModelOptions]="{standalone: true}"> 
-                            <option [value]="selectedGender" [selected]="true">Selecionar</option>
+                            <option [selected]="true">Selecionar</option>
                             <option>Fêmea</option>
                             <option>Macho</option>
                         </select>
@@ -47,7 +48,7 @@
                     <div class="col-6">
                         <p>Castrado: </p>
                         <select name="Castrado"  id="castrado" class="form-control" [(ngModel)]="selectedCastrated" [ngModelOptions]="{standalone: true}">
-                            <option [value]="selectedCastrated" [selected]="true">Selecionar</option>
+                            <option [selected]="true">Selecionar</option>
                             <option>Sim</option>
                             <option>Não</option>
                         </select>

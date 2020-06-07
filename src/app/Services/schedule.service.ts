@@ -15,7 +15,7 @@ export class ScheduleService {
    getCommitment(): Observable<Schedule>{
      return this.http.get<Schedule>('http://localhost:3333/schedule', {
         headers: {
-          Authorization: sessionStorage.getItem('userId'),
+          Authorization: localStorage.getItem('userId'),
         }
      });
    }
@@ -32,14 +32,14 @@ export class ScheduleService {
         place: place,
      }, {
         headers: {
-          Authorization: sessionStorage.getItem('userId')
+          Authorization: localStorage.getItem('userId')
         },
       });
    }
    deleteCommitment(scheduleId): Observable<Schedule>{
      return this.http.delete<Schedule>('http://localhost:3333/schedule/' + scheduleId, {
        headers:{
-         Authorization: sessionStorage.getItem('userId'),
+         Authorization: localStorage.getItem('userId'),
        }
      });
    }
