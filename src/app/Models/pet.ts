@@ -8,5 +8,5 @@ export class Pet{
 	castrated: string
 	specie: string
 	disease: string
-	photo_link: string
+	photo: string
 }

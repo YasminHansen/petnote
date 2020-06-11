@@ -74,7 +74,7 @@ export class ProfileComponent implements OnInit {
   edit(){      
     this.petService.editPet(this.pet.id, this.pet.name, this.pet.age, 
                             this.pet.gender, this.pet.weight, this.pet.castrated, 
-                            this.pet.disease, this.pet.specie, this.pet.photo_link).subscribe(
+                            this.pet.disease, this.pet.specie, this.pet.photo).subscribe(
       r => {
         // this.reload(); 
       },

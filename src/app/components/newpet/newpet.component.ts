@@ -44,10 +44,25 @@ export class NewpetComponent implements OnInit {
       this.validateGender = false;
     }
 
+    if(this.selectedGender == "Fêmea"){
+      pet.gender = "Fêmea";
+    }
+    else{
+      pet.gender = "Macho";
+    }
+
+
+    if(this.selectedCastrated == "Não"){
+      pet.castrated = "Não";
+    }
+    else{
+      pet.castrated = "Sim";
+    }
+
     this.petService.createPet(
       pet.name, pet.age, pet.weight, 
       pet.gender, pet.castrated, pet.disease,
-      pet.specie, pet.photo_link).subscribe(
+      pet.specie, pet.photo).subscribe(
         r => {
           alert(`Pet cadastrado com sucesso!`);
           this.router.navigate(['/profile']);
@@ -69,7 +84,7 @@ export class NewpetComponent implements OnInit {
             file.progress = Math.round(event.loaded * 100 / event.total);  
             break;  
           case HttpEventType.Response:  
-            this.pet.photo_link = event.body.link;
+            this.pet.photo = event.body.link;
             return event;  
         }  
       }),  

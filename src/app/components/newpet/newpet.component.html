@@ -3,7 +3,13 @@
         <div class="content">
             <section class="col-lg-6">
                 <div class="pet-photo">
-                    <img class="new-photo" src="{{ pet.photo_link }}"/>
+                    <img class="new-photo" src="{{ pet.photo }}"/>
+                </div>
+                <div>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <input type="file">
+                    </form>
+                    <label>Choose file</label>
                 </div>
                 <div class="button-photo">
                     <button color="warn" (click)="onClick()">  
