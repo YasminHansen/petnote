@@ -11,7 +11,7 @@
             padding: 0;
             margin-bottom: 10px;
             img{
-                height: 80px;
+                height: 70px;
             }
             span{
                 margin: 0;
@@ -201,6 +201,9 @@
         overflow: hidden;
         header{    
             .profile-logo{
+                img{
+                    height: 80px;
+                }
                 span{
                 font-size: 16px;
                 margin-left: 15px;
@@ -275,6 +278,9 @@
                 }
             }
         }
+    }
+    .schedule-calendar{
+        margin-top: 60px;
     }
     .profile-modal{
         .petInfo .row{

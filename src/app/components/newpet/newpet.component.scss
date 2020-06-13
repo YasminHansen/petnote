@@ -12,7 +12,6 @@
 
         section{
             .pet-photo{
-                // background:url("../../../assets/picpetDefault.png");
                 background-size: cover;
                 margin: 0px auto 20px auto;
                 width: 250px;
@@ -32,8 +31,10 @@
                 text-align: center;
                 margin-bottom: 20px;
                 height: 40px;
-                button{
-                    border: none;
+                label{
+                    input{
+                        display: none;
+                    }
                     i{
                         color: $detail-color;
                         font-size: 30px;
