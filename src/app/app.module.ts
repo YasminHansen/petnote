@@ -12,7 +12,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NewpetComponent } from './components/newpet/newpet.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
-import { NewscheduleComponent } from './components/newschedule/newschedule.component';
+import { NewscheduleComponent } from './components/newschedule/newschedule.component'
+import { ImageuploadComponent } from './components/imageupload/imageupload.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { NewscheduleComponent } from './components/newschedule/newschedule.compo
     RegisterComponent,
     ScheduleComponent,
     NewscheduleComponent,
+    ImageuploadComponent,
   ],
   imports: [
     BrowserModule,

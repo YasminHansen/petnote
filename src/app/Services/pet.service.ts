@@ -15,18 +15,18 @@ export class PetService {
   getPets(): Observable<Pet>{
     return this.http.get<Pet>('https://petnote-backend.herokuapp.com/profile', {
       headers: {
-        Authorization: sessionStorage.getItem('userId'),
+        Authorization: localStorage.getItem('userId'),
       }
     });
   }
   deletePet(petId: number): Observable<Pet>{
     return this.http.delete<Pet>('https://petnote-backend.herokuapp.com/pets/' + petId , {
       headers: {
-        Authorization: sessionStorage.getItem('userId'),
+        Authorization: localStorage.getItem('userId'),
       }
     });
   }
-  editPet(petId: number, name: string, age: number, gender: string, weight: string, castrated: string, disease: string, photo_link: string): Observable<Pet>{
+  editPet(petId: number, name: string, age: number, gender: string, weight: string, castrated: string, disease: string, specie: string, photo: any): Observable<Pet>{
     return this.http.post<Pet>('https://petnote-backend.herokuapp.com/pets/edit', {
         id: petId,
         name: name,
@@ -34,16 +34,17 @@ export class PetService {
         weight: weight,
         gender: gender,
         castrated: castrated,
+        specie: specie,
         disease: disease,
-        photo_link: photo_link,
+        photo: photo,
     },{
       headers: {
-        Authorization: sessionStorage.getItem('userId')
+        Authorization: localStorage.getItem('userId')
       },
     });
   }
   
-  createPet(name: string, age: number, weight: string, gender: string, castrated: string, disease: string, photo_link: string): Observable<Pet>{
+  createPet(name: string, age: number, weight: string, gender: string, castrated: string, disease: string, specie: string, photo: any): Observable<Pet>{
     
     return this.http.post<Pet>('https://petnote-backend.herokuapp.com/pets',{
 
@@ -53,10 +54,11 @@ export class PetService {
         gender: gender,
         castrated: castrated,
         disease: disease,
-        photo_link: photo_link,
+        specie: specie,
+        photo: photo,
     },{
       headers: {
-        Authorization: sessionStorage.getItem('userId')
+        Authorization: localStorage.getItem('userId')
       },
     });
   }

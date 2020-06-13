@@ -11,7 +11,7 @@
             padding: 0;
             margin-bottom: 10px;
             img{
-                height: 80px;
+                height: 70px;
             }
             span{
                 margin: 0;
@@ -89,7 +89,10 @@
                         margin-right: 5px;
                     }
                     p{
-                        margin: 0 5px;
+                        margin-left: 0 !important;
+                            &:first-letter{
+                                text-transform: uppercase;
+                            }
                     }
                     i{
                         width: 15px;
@@ -167,6 +170,7 @@
             border-radius: 5px;
             color: $input-color;
             margin-bottom: 10px;
+            padding: 5px 10px;
         }
         &.schedule-hour{
             display: flex;
@@ -197,6 +201,9 @@
         overflow: hidden;
         header{    
             .profile-logo{
+                img{
+                    height: 80px;
+                }
                 span{
                 font-size: 16px;
                 margin-left: 15px;
@@ -272,8 +279,14 @@
             }
         }
     }
+    .schedule-calendar{
+        margin-top: 60px;
+    }
     .profile-modal{
         .petInfo .row{
+            textarea, input{
+                margin-left: 5px;
+            }
             &.schedule-hour{
                 &::ng-deep ngb-timepicker {
                     padding: 0;

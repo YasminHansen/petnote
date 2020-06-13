@@ -23,10 +23,11 @@ export class LoginComponent implements OnInit {
       .subscribe(
         r => {
           if (1 == 1) {
-            sessionStorage.setItem('userId', r.id.toString());
-            sessionStorage.setItem('userName', r.name);
+            localStorage.setItem('userId', r.id.toString());
+            localStorage.setItem('userName', r.name);
+            window.location.href = "https://petnote-backend.herokuapp.com/pets/profile";
             // this.router.navigate[('/profile')];
-            this.router.navigateByUrl('/profile');
+            // this.router.navigateByUrl('/profile');
           }
         },
         r => {

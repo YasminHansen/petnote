@@ -80,9 +80,22 @@
             &:hover{
                 box-shadow: 0 0 25px rgba(0,0,0,0.1);
             }
-
-            .petPic img{
-                width: 100px;
+            
+            .petPic {
+                width: 155px;
+                height: 100px;
+                overflow: hidden;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                border: 2px solid $detail-color ;
+                
+                img{
+                    width: auto;
+                    height: 100px;
+                }
             }
 
             .petInfo{
@@ -127,12 +140,35 @@
     padding: 0 20px;
     .petPic{
         text-align: center;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        border: 3px solid $detail-color;
         img{
             margin: auto;
-            width: 200px;
+            width: auto;
+            height: 250px;
         }
     }
-
+    .editPetPic{
+        text-align: center;
+        label{
+            border: none;
+            font-size: 25px;
+            margin-bottom: 0;
+            height: 55px;
+            .editPetPicInput{
+                display: none !important;
+            }
+            &:hover{
+                font-size: 28px;
+            }
+        }
+    }
     .petInfo{
         padding: 20px;
         font-size: 16px;
@@ -160,11 +196,11 @@
     .fas{
         color: $detail-color;
     }
-    .trash-icon{
-        position: absolute;
-        margin-left: 25px;
-        left: 0;
-    }
+    // .trash-icon{
+    //     position: absolute;
+    //     margin-left: 25px;
+    //     left: 0;
+    // }
 }
 
 
@@ -202,24 +238,60 @@
             }
         }
         ul {
-            flex-wrap: unset;
+            flex-wrap: wrap;
             li{
-            width: 350px;
-            margin: 0 5px;
+                width: 350px;
+                margin: 5px;
+                flex: 0 0 48%;
+                .petPic{
+                    width: 160px;
+                }    
             }
         }
     }
     .profile-modal{
+        padding: 10px 20px;
+        justify-content: left;
+        button{
+            width: 40px;
+            height: 40px;
+            &.btn-save{
+                position: absolute;
+                right: 0;
+                width: max-content;
+                margin-right: 30px;
+            }
+        }
         .petPic{
         }
     
         .petInfo{
             padding: 0 25px;
             margin-top: 20px;
-            .row {
-                strong{
-                    padding: 0
+            .row{
+                align-items: center;
+                input{
+                    height: 38px;
                 }
+                &.select-group {
+                    display: flex;
+                    flex-wrap: inherit;
+                    margin-bottom: 8px;
+                    strong{
+                        padding: 0
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $break-lg){
+    .profile-container {
+        ul {
+            flex-wrap: wrap;
+            li .petPic{
+                width: 130px;
             }
         }
     }

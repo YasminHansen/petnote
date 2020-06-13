@@ -29,7 +29,10 @@
         }
         form{
             max-width: 100%;
-
+            span{
+                color:red;
+                margin: 10px;
+            }
             input{
                 margin-bottom: 5px;
                 &.ng-invalid{

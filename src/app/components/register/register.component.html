@@ -14,21 +14,20 @@
             <form>  
                 <input placeholder="Nome" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" required/>
 
+                <span *ngIf="invalidEmail == true" >E-mail inválido</span>
                 <input type="email" placeholder="E-mail" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" (blur)="emailValidator(user.email)" required/>
-                <span *ngIf="invalidEmail == true" style="color: red;">E-mail inválido</span>
-
+                
+                <span *ngIf="validateEmailError == true" >O E-mail não confere</span>
                 <input type="email" placeholder="Confirmar E-mail" [(ngModel)]="validateEmail" [ngModelOptions]="{standalone: true}" required/>
-                <span *ngIf="validateEmailError == true" style="color: red;">O E-mail não confere</span>
-               
-
+                
                 <input type="password" placeholder="Senha" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" required/>
+                <span *ngIf="validatePasswordError == true" >A senha não confere</span>
                 <input type="password" placeholder="Confirmar Senha" [(ngModel)]="validatePassword" [ngModelOptions]="{standalone: true}" required/>
-                <span *ngIf="validatePasswordError == true" style="color: red;">A senha não confere</span>
-
+                
                 <div class="input-group">
                     <input placeholder="Cidade" class="col-sm-12 col-md-9 col-lg-10" [(ngModel)]="user.city" [ngModelOptions]="{standalone: true}" required/>
                     <input placeholder="UF" class="col-sm-12 col-md-3 col-lg-2" maxlength="2"    [(ngModel)]="user.uf" [ngModelOptions]="{standalone: true}" (blur)="ufValidator(user.uf)" required/>
-                    <span *ngIf="invalidUF == true" style="color: red;">UF Inválida</span>
+                    <span *ngIf="invalidUF == true" >UF Inválida</span>
                 </div>
 
                 <button class="button" type="submit" (click)="register(user)">

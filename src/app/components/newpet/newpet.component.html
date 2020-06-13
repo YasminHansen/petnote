@@ -3,14 +3,19 @@
         <div class="content">
             <section class="col-lg-6">
                 <div class="pet-photo">
-                    <img class="new-photo" src="{{ pet.photo_link }}"/>
+                    <img *ngIf="pet.photo == null" src="../../../assets/picpetDefault.png" alt="pets" />
+                    <img *ngIf="pet.photo" class="new-photo" src="{{ pet.photo }}"/>
                 </div>
                 <div class="button-photo">
-                    <button color="warn" (click)="onClick()">  
-                        <i class="fas fa-camera"></i>
-                    </button>  
+                    <label class="image-upload-container btn btn-bwm">
+                        <input #imageInput
+                               type="file"
+                               accept="image/*"
+                               (change)="processFile(imageInput)">
+                               <i class="fas fa-camera"></i>
+                      </label>
+                    <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />  
                 </div>
-                <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
                 <h1>
                     Cadastrar novo pet 
                     <i class="fas fa-paw"></i>
@@ -35,11 +40,12 @@
                     placeholder="Peso"
                     [(ngModel)]="pet.weight" [ngModelOptions]="{standalone: true}"/>
                 
+                <span *ngIf="validateGender == true || validateCastrated == true" >Preencha os campos abaixo.</span>
                 <div class="input-group">
                     <div class="col-6">
                         <p>Gênero: </p>
                         <select name="Gênero" class="form-control" [(ngModel)]="selectedGender" [ngModelOptions]="{standalone: true}"> 
-                            <option [value]="selectedGender" [selected]="true">Selecionar</option>
+                            <option [selected]="true">Selecionar</option>
                             <option>Fêmea</option>
                             <option>Macho</option>
                         </select>
@@ -47,13 +53,16 @@
                     <div class="col-6">
                         <p>Castrado: </p>
                         <select name="Castrado"  id="castrado" class="form-control" [(ngModel)]="selectedCastrated" [ngModelOptions]="{standalone: true}">
-                            <option [value]="selectedCastrated" [selected]="true">Selecionar</option>
+                            <option [selected]="true">Selecionar</option>
                             <option>Sim</option>
                             <option>Não</option>
                         </select>
                     </div>
                 </div>
                 
+                <input 
+                    placeholder="Espécie" 
+                    [(ngModel)]="pet.specie" [ngModelOptions]="{standalone: true}"/>
                 <input 
                     placeholder="Doenças" 
                     [(ngModel)]="pet.disease" [ngModelOptions]="{standalone: true}"/>
