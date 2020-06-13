@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('userId', r.id.toString());
             localStorage.setItem('userName', r.name);
             // window.location.href = "https://petnote-frontend.herokuapp.com/profile";
-            this.router.navigate[('/profile')];
-            // this.router.navigateByUrl('/profile');
+            //this.router.navigate[('/profile')];
+            this.router.navigateByUrl('/profile');
           }
         },
         r => {
