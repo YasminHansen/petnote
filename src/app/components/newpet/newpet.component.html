@@ -3,19 +3,21 @@
         <div class="content">
             <section class="col-lg-6">
                 <div class="pet-photo">
-                    <img class="new-photo" src="{{ pet.photo }}"/>
-                </div>
-                <div>
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <input type="file">
-                    </form>
-                    <label>Choose file</label>
+                    <img *ngIf="pet.photo == null" src="../../../assets/picpetDefault.png" alt="pets" />
+                    <img *ngIf="pet.photo" class="new-photo" src="{{ pet.photo }}"/>
                 </div>
                 <div class="button-photo">
-                    <button color="warn" (click)="onClick()">  
+                    <button color="warn">  
                         <i class="fas fa-camera"></i>
                     </button>  
                 </div>
+                <label class="image-upload-container btn btn-bwm">
+                    <span>Select Image</span>
+                    <input #imageInput
+                           type="file"
+                           accept="image/*"
+                           (change)="processFile(imageInput)">
+                  </label>
                 <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
                 <h1>
                     Cadastrar novo pet 

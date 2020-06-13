@@ -3,6 +3,12 @@ import { NgbModal, ModalDismissReasons, NgbModalOptions } from '@ng-bootstrap/ng
 import { Pet } from 'src/app/Models/pet';
 import { PetService } from 'src/app/Services/pet.service';
 import { Router } from '@angular/router';
+import { ImageService } from 'src/app/Services/image.service';
+
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
+}
+
 
 @Component({
   selector: 'app-profile',
@@ -22,12 +28,15 @@ export class ProfileComponent implements OnInit {
   closeResult: string;
   modalOptions:NgbModalOptions;
   reloadPag = true;
+  image = new Image();
+  selectedFile: ImageSnippet;
 
 
   constructor(
     private modalService: NgbModal,
     private petService: PetService,
     private router: Router,
+    private imageService: ImageService,
   ){
     this.modalOptions = {
       backdrop:'static',
@@ -83,6 +92,20 @@ export class ProfileComponent implements OnInit {
       }
     );
 
+  }
+
+  editPhoto(imageInput: any){
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+      this.image.src = this.selectedFile.src;
+      this.pet.photo = this.image.src;
+    });
+    
+    reader.readAsDataURL(file);
   }
 
   delete(){
